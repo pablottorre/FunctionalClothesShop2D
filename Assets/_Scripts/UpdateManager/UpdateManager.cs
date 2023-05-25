@@ -29,8 +29,8 @@ public class UpdateManager : MonoBehaviour
 
     private void Start()
     {
-        EventManager.SubscribeToEvent(EventNames._gamePaused, PauseGame);
-        EventManager.SubscribeToEvent(EventNames._gameResumed, ResumeGame);
+        EventManager.SubscribeToEvent(EventNames._GamePaused, PauseGame);
+        EventManager.SubscribeToEvent(EventNames._GameResumed, ResumeGame);
     }
 
     void Update()

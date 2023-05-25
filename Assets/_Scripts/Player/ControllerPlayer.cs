@@ -23,19 +23,32 @@ public class ControllerPlayer : MonoBehaviour
     [ContextMenu("TestGameStart")]
     public void testOP()
     {
-        EventManager.TriggerEvent(EventNames._gameStart);
+        EventManager.TriggerEvent(EventNames._GameStart);
     }
     
     
     [ContextMenu("TestGameResume")]
     public void testResume()
     {
-        EventManager.TriggerEvent(EventNames._gameResumed);
+        EventManager.TriggerEvent(EventNames._GameResumed);
     }
     
     [ContextMenu("TestGamePaused")]
     public void testPause()
     {
-        EventManager.TriggerEvent(EventNames._gamePaused);
+        EventManager.TriggerEvent(EventNames._GamePaused);
+    }
+    
+    
+    [ContextMenu("TestStartMeditating")]
+    public void testStartMeditating()
+    {
+        EventManager.TriggerEvent(EventNames._StartMeditating);
+    }
+    
+    [ContextMenu("TestStopMeditating")]
+    public void testStopMeditating()
+    {
+        EventManager.TriggerEvent(EventNames._StopMeditating);
     }
 }

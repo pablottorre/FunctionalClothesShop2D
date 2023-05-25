@@ -25,9 +25,9 @@ public class TimeSystem : MonoBehaviour
 
     private void Start()
     {
-        EventManager.SubscribeToEvent(EventNames._gameResumed, KeepCountingTime);
-        EventManager.SubscribeToEvent(EventNames._gameStart, KeepCountingTime);
-        EventManager.SubscribeToEvent(EventNames._gamePaused, StopCountingTime);
+        EventManager.SubscribeToEvent(EventNames._GameResumed, KeepCountingTime);
+        EventManager.SubscribeToEvent(EventNames._GameStart, KeepCountingTime);
+        EventManager.SubscribeToEvent(EventNames._GamePaused, StopCountingTime);
         UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
     }
 
@@ -53,7 +53,6 @@ public class TimeSystem : MonoBehaviour
         
     private void KeepCountingTime(params object[] parameters)
     {
-        Debug.Log(7889);
         startCounting = true;
     }
 

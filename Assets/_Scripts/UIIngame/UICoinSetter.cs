@@ -12,6 +12,7 @@ public class UICoinSetter : UISetter
         functionToCall = SetterCoins;
         base.Start();
         EventManager.SubscribeToEvent(EventNames._BuySomething, functionToCall);
+        EventManager.SubscribeToEvent(EventNames._UpdateCoins, functionToCall);
     }
 
     private void SetterCoins(params object[] parameters)

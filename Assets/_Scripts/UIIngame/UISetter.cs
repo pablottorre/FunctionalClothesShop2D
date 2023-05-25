@@ -11,6 +11,6 @@ public class UISetter : MonoBehaviour
 
     public virtual void Start()
     {
-        EventManager.SubscribeToEvent(EventNames._gameStart, functionToCall);
+        EventManager.SubscribeToEvent(EventNames._GameStart, functionToCall);
     }
 }
