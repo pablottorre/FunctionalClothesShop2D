@@ -6,12 +6,12 @@ public class ButtonsFunctions : MonoBehaviour
 {
     public void PlayButtonFunction()
     {
-        EventManager.TriggerEvent("");
+        EventManager.TriggerEvent(EventNames._gameStart);
     }
 
     public void OptionsButtonFunction()
     {
-
+        EventManager.TriggerEvent(EventNames._optionsStart);
     }
 
     public void ExitButtonFunction()
