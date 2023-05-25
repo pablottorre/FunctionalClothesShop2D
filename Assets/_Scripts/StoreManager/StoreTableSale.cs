@@ -12,6 +12,7 @@ public class StoreTableSale : MonoBehaviour
     public void SetTable(ClothesSO _cloth)
     {
         clothesSpriteToDisplay.sprite = _cloth.clothesSprite;
-        clothesPriceToDisplay.text = _cloth.clothesCost.ToString();
+        float priceToDiscount = Random.Range(0.5f, 0.95f);
+        clothesPriceToDisplay.text = (_cloth.clothesCost * priceToDiscount).ToString("F0");
     }
 }

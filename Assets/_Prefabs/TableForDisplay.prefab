@@ -73,7 +73,7 @@ Transform:
   m_GameObject: {fileID: 6642633761825624190}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.61, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6642633762515331110}
@@ -165,10 +165,10 @@ RectTransform:
   m_Father: {fileID: 6642633762515331110}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.46122316, y: 0.389805}
-  m_AnchorMax: {x: 0.5395765, y: 0.4527324}
-  m_AnchoredPosition: {x: -0.0029805303, y: 0.016737819}
-  m_SizeDelta: {x: -0.046271432, y: -0.070424944}
+  m_AnchorMin: {x: 0.4455536, y: 0.28282923}
+  m_AnchorMax: {x: 0.55444247, y: 0.39353913}
+  m_AnchoredPosition: {x: 0.0031319857, y: 0.0026066303}
+  m_SizeDelta: {x: -0.09935559, y: -0.14410293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6642633762284091048
 CanvasRenderer:
@@ -198,7 +198,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 000
+  m_text: 0000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -225,11 +225,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.5
+  m_fontSize: 0.8
   m_fontSizeBase: 0.5
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 1
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0.5
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
