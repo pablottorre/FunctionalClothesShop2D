@@ -27,6 +27,22 @@ public class TimeSystem : MonoBehaviour
     {
         EventManager.SubscribeToEvent(EventNames._gameStart, KeepCountingTime);
         EventManager.SubscribeToEvent(EventNames._gamePaused, StopCountingTime);
+        UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
+    }
+
+    private void OnUpdateDelegate()
+    {
+        if (startCounting)
+        {
+            minutes += Time.deltaTime;
+            if (minutes > 59)
+            {
+                hours++;
+                if (hours > 24)
+                    hours = 0;
+                minutes = 0;
+            }
+        }
     }
 
     public string GetCurrentFullTime()
@@ -42,21 +58,5 @@ public class TimeSystem : MonoBehaviour
     private void StopCountingTime(params object[] parameters)
     {
         startCounting = false;
-    }
-
-    private void Update()
-    {
-        if (startCounting)
-        {
-            minutes += Time.deltaTime;
-            if (minutes > 59)
-            {
-                hours++;
-                if (hours > 24)
-                    hours = 0;
-                minutes = 0;
-            }
-        }
-
     }
 }

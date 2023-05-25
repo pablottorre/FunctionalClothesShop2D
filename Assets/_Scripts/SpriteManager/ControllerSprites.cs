@@ -16,13 +16,13 @@ public class ControllerSprites : MonoBehaviour
     void Start()
     {
         ControllerOrderLayer();
+        UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
     }
 
-    void Update()
+    private void OnUpdateDelegate()
     {
         if (inUpdate) ControllerOrderLayer();
     }
-
 
     void LoadSpriteRenders()
     {

@@ -7,18 +7,17 @@ public class ControllerPlayer : MonoBehaviour
     [Header("PlayerModel")]
     [SerializeField] ModelPlayer _mp;
 
-    // Start is called before the first frame update
+
     void Start()
     {
-
+        UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    private void OnUpdateDelegate()
     {
         _mp.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        
     }
 
     [ContextMenu("TestOP")]
