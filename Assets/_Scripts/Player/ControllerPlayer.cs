@@ -10,12 +10,20 @@ public class ControllerPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        _mp.Move(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
+        _mp.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        
+    }
+
+    [ContextMenu("TestOP")]
+    public void testOP()
+    {
+        EventManager.TriggerEvent(EventNames._PlayerEnterTheStore);
     }
 }

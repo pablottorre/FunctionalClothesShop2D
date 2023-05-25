@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 6026426234293720048}
   - component: {fileID: 3087765406160606637}
   - component: {fileID: 6080340316996839816}
+  - component: {fileID: 5648910927875769162}
   m_Layer: 5
   m_Name: ItemDisplayObjectUI
   m_TagString: Untagged
@@ -471,6 +472,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5648910927875769162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628178487824348865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff6fc13b0458754ebee23da6f22b3ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothesSpriteToDisplay: {fileID: 4396935268634020410}
+  clothesNameToDisplay: {fileID: 4699955592110292396}
+  clothesPriceToDisplay: {fileID: 8418196319980030780}
 --- !u!1 &3838278659316611281
 GameObject:
   m_ObjectHideFlags: 0

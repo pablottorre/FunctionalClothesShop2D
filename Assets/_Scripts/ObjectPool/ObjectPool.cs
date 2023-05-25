@@ -11,10 +11,15 @@ public class ObjectPool : MonoBehaviour
     private void Awake()
     {
         objectPoolCollection.Clear();
-        InstantiateObjects();
+        //InstantiateObjects();
     }
 
-    private void InstantiateObjects()
+    private void Start()
+    {
+        EventManager.SubscribeToEvent(EventNames._PlayerEnterTheStore, InstantiateObjects);
+    }
+
+    private void InstantiateObjects(params object[] parameters)
     {
         GameObject newObject = null;
         Transform targetParent = transform;
@@ -33,7 +38,10 @@ public class ObjectPool : MonoBehaviour
                 newObject.name = $"{objectPrefab.name}-{i}";
             }
             objectPoolCollection.Add(newObject);
-            newObject.SetActive(true);
+            newObject.SetActive(false);
         }
+
+        EventManager.TriggerEvent(EventNames._FinishedCreatingItemsPO, objectPoolCollection);
     }
+
 }

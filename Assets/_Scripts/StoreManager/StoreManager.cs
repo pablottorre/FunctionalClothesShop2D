@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class StoreManager : MonoBehaviour
 {
-    [SerializeField] private List<ClothesSO> listOfClothes = new List<ClothesSO>();
-    [SerializeField] private List<StoreTableSale> listOfTables = new List<StoreTableSale>();
+    public List<ClothesSO> listOfClothes = new List<ClothesSO>();
 
 
-    public void SetTablesToDisplay()
-    {
-        for (int i = 0; i < listOfTables.Count; i++)
-        {
-            listOfTables[i].SetTable(listOfClothes[Random.Range(0, listOfClothes.Count)]);
-        }
-    }
+    
 }

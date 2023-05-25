@@ -11,4 +11,7 @@ public class ClothesSO : ScriptableObject
 
     [Header("Cost")]
     public int clothesCost;
+
+    [Header("Name")]
+    public string clothesName;
 }

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clothesSprite: {fileID: 21300000, guid: 090685ddfa394cd439be5ce36d30362c, type: 3}
   clothesCost: 85
+  clothesName: Jean
