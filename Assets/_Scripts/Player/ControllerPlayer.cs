@@ -24,6 +24,6 @@ public class ControllerPlayer : MonoBehaviour
     [ContextMenu("TestOP")]
     public void testOP()
     {
-        EventManager.TriggerEvent(EventNames._PlayerEnterTheStore);
+        EventManager.TriggerEvent(EventNames._gameStart);
     }
 }
