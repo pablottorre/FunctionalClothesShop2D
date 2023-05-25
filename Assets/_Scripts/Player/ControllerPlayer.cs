@@ -31,6 +31,18 @@ public class ControllerPlayer : MonoBehaviour
     public void testResume()
     {
         EventManager.TriggerEvent(EventNames._GameResumed);
+    } 
+    
+   /* [ContextMenu("TestOP")]
+    public void testOP()
+    {
+        EventManager.TriggerEvent(EventNames.ob);
+    }*/
+    
+    [ContextMenu("TestGameResume345")]
+    public void testResume34534()
+    {
+        EventManager.TriggerEvent(EventNames._PlayerEnterTheStore);
     }
     
     [ContextMenu("TestGamePaused")]

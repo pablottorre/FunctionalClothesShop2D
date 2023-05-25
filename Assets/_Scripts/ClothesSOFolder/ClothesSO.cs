@@ -14,4 +14,16 @@ public class ClothesSO : ScriptableObject
 
     [Header("Name")]
     public string clothesName;
+
+    [Header("Type")]
+    public ClothesType typeOfClothes;
+}
+
+public enum ClothesType
+{
+    Hat,
+    Jacket,
+    Tshirt,
+    Trousers,
+    Boots
 }

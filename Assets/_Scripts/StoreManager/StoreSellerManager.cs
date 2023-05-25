@@ -9,14 +9,16 @@ public class StoreSellerManager : StoreManager
 
     private void Start()
     {
+        Debug.Log(423);
         EventManager.SubscribeToEvent(EventNames._FinishedCreatingItemsPO, GetItemsFromPool);
         EventManager.SubscribeToEvent(EventNames._ShowItemsInStore, SetChatToDisplay);
     }
 
     public void GetItemsFromPool(params object[] parameters)
     {
+        Debug.Log(345);
         itemsFromPool = (List<GameObject>)parameters[0];
-        //SetChatToDisplay();
+        SetChatToDisplay();
     }
 
     public void SetChatToDisplay(params object[] parameters)

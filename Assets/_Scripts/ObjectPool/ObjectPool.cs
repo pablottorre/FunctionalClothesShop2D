@@ -38,10 +38,8 @@ public class ObjectPool : MonoBehaviour
                 newObject.name = $"{objectPrefab.name}-{i}";
             }
             objectPoolCollection.Add(newObject);
-            newObject.SetActive(false);
+            newObject.SetActive(true);
         }
-
-        EventManager.TriggerEvent(EventNames._FinishedCreatingItemsPO, objectPoolCollection);
     }
 
 }

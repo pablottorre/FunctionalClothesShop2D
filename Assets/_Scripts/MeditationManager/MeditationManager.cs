@@ -15,7 +15,6 @@ public class MeditationManager : MonoBehaviour
 
     private void StartMeditating(params object[] parameters)
     {
-        Debug.Log(1111);
         isMeditating = true;
         StartCoroutine(MeditatingCorutine());
     }
@@ -27,10 +26,8 @@ public class MeditationManager : MonoBehaviour
 
     IEnumerator MeditatingCorutine()
     {
-        Debug.Log(5345);
         while (isMeditating)
         {
-            Debug.Log(999);
             yield return new WaitForSecondsRealtime(1);
             EconomySystem.instance.AddCoins(5);
             EventManager.TriggerEvent(EventNames._UpdateCoins);
