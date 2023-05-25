@@ -10,6 +10,7 @@ public class UITimerSetter : UISetter
     {
         functionToCall = SetterTimer;
         base.Start();
+        UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
     }
 
     private void SetterTimer(params object[] parameters)
@@ -22,10 +23,8 @@ public class UITimerSetter : UISetter
         fillmentText.text = TimeSystem.instance.GetCurrentFullTime();
     }
 
-    private void Update()
+    private void OnUpdateDelegate()
     {
         SetText();
     }
-
-
 }

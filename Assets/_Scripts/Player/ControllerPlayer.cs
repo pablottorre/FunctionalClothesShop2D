@@ -20,9 +20,22 @@ public class ControllerPlayer : MonoBehaviour
         _mp.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
-    [ContextMenu("TestOP")]
+    [ContextMenu("TestGameStart")]
     public void testOP()
     {
         EventManager.TriggerEvent(EventNames._gameStart);
+    }
+    
+    
+    [ContextMenu("TestGameResume")]
+    public void testResume()
+    {
+        EventManager.TriggerEvent(EventNames._gameResumed);
+    }
+    
+    [ContextMenu("TestGamePaused")]
+    public void testPause()
+    {
+        EventManager.TriggerEvent(EventNames._gamePaused);
     }
 }

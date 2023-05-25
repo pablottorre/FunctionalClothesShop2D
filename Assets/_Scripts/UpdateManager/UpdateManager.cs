@@ -29,8 +29,8 @@ public class UpdateManager : MonoBehaviour
 
     private void Start()
     {
-        EventManager.SubscribeToEvent("PauseGame", PauseGame);
-        EventManager.SubscribeToEvent("ResumeGame", ResumeGame);
+        EventManager.SubscribeToEvent(EventNames._gamePaused, PauseGame);
+        EventManager.SubscribeToEvent(EventNames._gameResumed, ResumeGame);
     }
 
     void Update()
@@ -58,9 +58,6 @@ public class UpdateManager : MonoBehaviour
     {
         isOnPause = true;
 
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
-
         foreach (Animator anim in animators)
         {
             anim.speed = 0;
@@ -70,9 +67,6 @@ public class UpdateManager : MonoBehaviour
     void ResumeGame(params object[] parameters)
     {
         isOnPause = false;
-
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
 
         foreach (Animator anim in animators)
         {
