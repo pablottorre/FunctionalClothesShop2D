@@ -10,12 +10,14 @@ public class StoreTableSale : ItemToBuy
     [SerializeField] SpriteRenderer clothesSpriteToDisplay;
     [SerializeField] TMP_Text clothesPriceToDisplay;
     public int realPrice;
+    [SerializeField] GameObject spriteToBuy;
 
     [Header("Item No Longer On Sale")]
     [SerializeField] BoxCollider2D buyZone;
 
     public override void SetItem(ClothesSO _cloth)
     {
+        buyZone.enabled = true;
         clothesSpriteToDisplay.sprite = _cloth.clothesSprite;
         float priceToDiscount = Random.Range(0.5f, 0.95f);
         int tempNumb = Mathf.RoundToInt(_cloth.clothesCost * priceToDiscount);
@@ -39,16 +41,29 @@ public class StoreTableSale : ItemToBuy
     {
         if (isBuyable)
         {
-            buyZone.enabled = false;
-            clothesSpriteToDisplay.enabled = false;
-            clothesPriceToDisplay.text = "";
-
+            DisableItemOnSale();         
             EconomySystem.instance.SpendCoins(realPrice);
             EventManager.TriggerEvent(eventName, _so);
             BuyableSetter(false);
+            
         }
 
         GetComponent<StoreTableSale>().enabled = false;
     }
 
+    public void EnableEAnimation()
+    {
+        if (spriteToBuy.activeInHierarchy)
+            spriteToBuy.SetActive(false);
+        else
+            spriteToBuy.SetActive(true);
+    }
+
+    private void DisableItemOnSale()
+    {
+        buyZone.enabled = false;
+        clothesSpriteToDisplay.enabled = false;
+        clothesPriceToDisplay.text = "";
+        spriteToBuy.SetActive(false);
+    }
 }

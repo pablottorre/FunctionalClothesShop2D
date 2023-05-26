@@ -95,6 +95,7 @@ public class ControllerPlayer : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             itemToBuyFromTable = collision.gameObject;
+            itemToBuyFromTable.GetComponentInParent<StoreTableSale>().EnableEAnimation();
         }
 
         if (collision.gameObject.layer == 7)
@@ -112,6 +113,7 @@ public class ControllerPlayer : MonoBehaviour
     {
         if (collision.gameObject.layer == 6)
         {
+            itemToBuyFromTable.GetComponentInParent<StoreTableSale>().EnableEAnimation();
             itemToBuyFromTable = null;
         }
 
