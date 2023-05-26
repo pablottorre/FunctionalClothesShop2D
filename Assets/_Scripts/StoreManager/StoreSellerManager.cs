@@ -22,6 +22,7 @@ public class StoreSellerManager : MonoBehaviour
     {
         EventManager.SubscribeToEvent(EventNames._ShowItemsInStore, SetChatToDisplay);
         EventManager.SubscribeToEvent(EventNames._BuySomethingFromSeller, RemoveItemFromList);
+        EventManager.SubscribeToEvent(EventNames._InvetoryUpdated, UpdatePlayerUI);
         EventManager.SubscribeToEvent(EventNames._Sellsomething, SellItems);
 
         EventManager.SubscribeToEvent(EventNames._LoadUISeller, StartingSequence);
@@ -76,11 +77,13 @@ public class StoreSellerManager : MonoBehaviour
 
     public void RemoveItemFromList(params object[] parameters)
     {
-
         listOfClothes.Remove((ClothesSO)parameters[0]);
+    }
+
+    public void UpdatePlayerUI(params object[] parameters)
+    {
         for (int i = 0; i < InventoryManager.instance.GetterOwnedClothes().Count; i++)
         {
-            Debug.Log(222);
             itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterCell(InventoryManager.instance.GetterOwnedClothes()[i]);
             itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterForSale(true);
             itemsFromPoolOwn[i].SetActive(true);

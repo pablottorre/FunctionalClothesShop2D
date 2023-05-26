@@ -12,6 +12,7 @@ public static class EventNames
     public const string _FinishedCreatingItemsPO = "EndOPItems";
     public const string _ShowItemsInStore = "ShowItemsInStore";
     public const string _BuySomethingFromSeller = "BuySomething";
+    public const string _InvetoryUpdated = "InventoryUpdated";
     public const string _BuySomethingFromTable = "BuySomething";
     public const string _Sellsomething = "SellSomething";
     public const string _StartMeditating = "StartMeditating";
