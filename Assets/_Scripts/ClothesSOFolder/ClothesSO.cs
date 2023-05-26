@@ -21,9 +21,10 @@ public class ClothesSO : ScriptableObject
 
 public enum ClothesType
 {
-    Hat,
-    Jacket,
-    Tshirt,
-    Trousers,
-    Shoes
+    Hood,
+    Mask,
+    Torso,
+    Pelvis,
+    ShoesL,
+    ShoesR
 }

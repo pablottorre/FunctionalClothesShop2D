@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10fa6acba58cd2a4db30cd6aa0d4ef06, type: 3}
-  m_Name: Jacket
+  m_Name: Pelvis 4
   m_EditorClassIdentifier: 
-  clothesSprite: {fileID: 21300000, guid: 1523363110d51784fa3085b9b74cdfc1, type: 3}
-  clothesCost: 79
-  clothesName: Jacket
-  typeOfClothes: 1
+  clothesSprite: {fileID: 21300000, guid: f5e38fc0746afdb408f3af29c6c737cc, type: 3}
+  clothesCost: 68
+  clothesName: Purple Pelvis
+  typeOfClothes: 3

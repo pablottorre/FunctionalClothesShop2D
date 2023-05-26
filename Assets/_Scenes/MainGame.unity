@@ -278,10 +278,10 @@ MonoBehaviour:
   clothesOwned:
   - {fileID: 11400000, guid: eb41f1eedda4e924084a9add946b4430, type: 2}
   - {fileID: 11400000, guid: 399e3971c3dc905489d433a27372f9bf, type: 2}
-  - {fileID: 11400000, guid: e02822607df189143b1c9b1878c3cdb7, type: 2}
   - {fileID: 11400000, guid: 5cb14caeb3f70fc4d8fc8174f2d166bb, type: 2}
-  - {fileID: 11400000, guid: 004cc9b726d9f7f46a20bbb3aa0a3bbe, type: 2}
+  - {fileID: 11400000, guid: e02822607df189143b1c9b1878c3cdb7, type: 2}
   - {fileID: 11400000, guid: edfa0500d7ef3674ca9444f198c3cfe1, type: 2}
+  - {fileID: 11400000, guid: 004cc9b726d9f7f46a20bbb3aa0a3bbe, type: 2}
   clothesEquiped: []
 --- !u!4 &243013154
 Transform:
@@ -3560,7 +3560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3942167379869000260, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -3.4627838
+      value: -3.4627686
       objectReference: {fileID: 0}
     - target: {fileID: 4586242771618920280, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
       propertyPath: m_AnchoredPosition.x
