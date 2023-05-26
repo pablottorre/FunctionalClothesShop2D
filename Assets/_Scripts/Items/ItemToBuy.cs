@@ -15,7 +15,7 @@ public class ItemToBuy : MonoBehaviour
         return _so;
     }
 
-    private void Start()
+    public virtual void Start()
     {
         EventManager.SubscribeToEvent(EventNames._BuySomethingFromSeller,SetterBoolean);
         EventManager.SubscribeToEvent(EventNames._BuySomethingFromTable,SetterBoolean);

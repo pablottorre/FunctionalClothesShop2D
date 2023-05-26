@@ -78,6 +78,7 @@ public class StoreSellerManager : MonoBehaviour
     public void RemoveItemFromList(params object[] parameters)
     {
         listOfClothes.Remove((ClothesSO)parameters[0]);
+        UpdateGoldText();
     }
 
     public void UpdatePlayerUI(params object[] parameters)
@@ -95,6 +96,11 @@ public class StoreSellerManager : MonoBehaviour
     }
 
     public void SellItems(params object[] parameters)
+    {
+        UpdateGoldText();
+    }
+
+    private void UpdateGoldText()
     {
         goldText.text = EconomySystem.instance.GetCurrentCoins().ToString();
     }

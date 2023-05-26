@@ -6,13 +6,17 @@ using TMPro;
 
 public class StoreChatSale : ItemToBuy
 {
-    
+
 
     [SerializeField] Image clothesSpriteToDisplay;
     [SerializeField] TMP_Text clothesNameToDisplay;
     [SerializeField] TMP_Text clothesPriceToDisplay;
 
-
+    public override void Start()
+    {
+        base.Start();
+        EventManager.SubscribeToEvent(EventNames._Sellsomething, SetterBoolean);
+    }
 
     public override void SetItem(ClothesSO _cloth)
     {
