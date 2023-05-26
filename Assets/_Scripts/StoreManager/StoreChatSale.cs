@@ -4,23 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class StoreChatSale : MonoBehaviour
+public class StoreChatSale : ItemToBuy
 {
-    ClothesSO _so;
+    
 
     [SerializeField] Image clothesSpriteToDisplay;
     [SerializeField] TMP_Text clothesNameToDisplay;
     [SerializeField] TMP_Text clothesPriceToDisplay;
 
-    private bool isBuyable;
 
-    public ClothesSO GetterSO()
-    {
-        return _so;
-    }
 
-    public void SetChatSale(ClothesSO _cloth)
+    public override void SetItem(ClothesSO _cloth)
     {
+        eventName = EventNames._BuySomethingFromSeller;
+
         clothesSpriteToDisplay.sprite = _cloth.clothesSprite;
         clothesNameToDisplay.text = _cloth.clothesName;
         clothesPriceToDisplay.text = _cloth.clothesCost.ToString();
@@ -30,22 +27,11 @@ public class StoreChatSale : MonoBehaviour
             BuyableSetter(true);
         else
             BuyableSetter(false);
-
     }
 
-    private void BuyableSetter(bool value)
+    public override void BuyableSetter(bool value)
     {
-
+        base.BuyableSetter(value);
         GetComponent<Button>().interactable = value;
-        isBuyable = value;
-    }
-
-    public void BuyItem()
-    {
-        if (isBuyable)
-        {
-            EventManager.TriggerEvent(EventNames._BuySomethingFromSeller, _so);
-            BuyableSetter(false);
-        }
     }
 }

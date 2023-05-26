@@ -2,8 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StoreSellerManager : StoreManager
+public class StoreSellerManager : MonoBehaviour
 {
+
+    public List<ClothesSO> listOfClothes = new List<ClothesSO>();
     public List<GameObject> itemsFromPool;
     [SerializeField] private ObjectPool _op;
 
@@ -36,9 +38,6 @@ public class StoreSellerManager : StoreManager
         cg.blocksRaycasts = false;
     }
 
-
-
-    [ContextMenu("xcv")]
     public void GetItemsFromPool()
     {
         itemsFromPool = _op.objectPoolCollection;
@@ -50,7 +49,7 @@ public class StoreSellerManager : StoreManager
     {
         for (int i = 0; i < listOfClothes.Count; i++)
         {
-            itemsFromPool[i].GetComponent<StoreChatSale>().SetChatSale(listOfClothes[i]);
+            itemsFromPool[i].GetComponent<StoreChatSale>().SetItem(listOfClothes[i]);
             itemsFromPool[i].SetActive(true);
         }
     }

@@ -22,4 +22,5 @@ public class ModelPlayer : MonoBehaviour
     {
         transform.position += new Vector3(horizontal, vertical, 0) * _moveSpeed * Time.deltaTime;
     }
+
 }

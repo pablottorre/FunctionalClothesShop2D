@@ -20,47 +20,12 @@ public class ControllerPlayer : MonoBehaviour
         _mp.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
     }
 
-    [ContextMenu("TestGameStart")]
-    public void testOP()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        EventManager.TriggerEvent(EventNames._GameStart);
-    }
-    
-    
-    [ContextMenu("TestGameResume")]
-    public void testResume()
-    {
-        EventManager.TriggerEvent(EventNames._GameResumed);
-    } 
-    
-   /* [ContextMenu("TestOP")]
-    public void testOP()
-    {
-        EventManager.TriggerEvent(EventNames.ob);
-    }*/
-    
-    [ContextMenu("TestGameResume345")]
-    public void testResume34534()
-    {
-        EventManager.TriggerEvent(EventNames._PlayerEnterTheStore);
-    }
-    
-    [ContextMenu("TestGamePaused")]
-    public void testPause()
-    {
-        EventManager.TriggerEvent(EventNames._GamePaused);
-    }
-    
-    
-    [ContextMenu("TestStartMeditating")]
-    public void testStartMeditating()
-    {
-        EventManager.TriggerEvent(EventNames._StartMeditating);
-    }
-    
-    [ContextMenu("TestStopMeditating")]
-    public void testStopMeditating()
-    {
-        EventManager.TriggerEvent(EventNames._StopMeditating);
+        if (collision.gameObject.layer == 6)
+        {
+            Debug.Log(collision.gameObject.name);
+            collision.gameObject.GetComponentInParent<StoreTableSale>().BuyItem();
+        }
     }
 }
