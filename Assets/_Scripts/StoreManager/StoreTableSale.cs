@@ -9,6 +9,7 @@ public class StoreTableSale : ItemToBuy
 
     [SerializeField] SpriteRenderer clothesSpriteToDisplay;
     [SerializeField] TMP_Text clothesPriceToDisplay;
+    public int realPrice;
 
     [Header("Item No Longer On Sale")]
     [SerializeField] BoxCollider2D buyZone;
@@ -17,11 +18,18 @@ public class StoreTableSale : ItemToBuy
     {
         clothesSpriteToDisplay.sprite = _cloth.clothesSprite;
         float priceToDiscount = Random.Range(0.5f, 0.95f);
-        clothesPriceToDisplay.text = (_cloth.clothesCost * priceToDiscount).ToString("F0");
+        int tempNumb = Mathf.RoundToInt(_cloth.clothesCost * priceToDiscount);
+        realPrice = tempNumb;
+        clothesPriceToDisplay.text = tempNumb.ToString("F0");
         _so = _cloth;
         eventName = EventNames._BuySomethingFromTable;
 
-        if (_so.clothesCost <= EconomySystem.instance.GetCurrentCoins())
+        SetterBoolean();
+    }
+
+    public override void SetterBoolean(params object[] parameters)
+    {
+        if (EconomySystem.instance.CheckIfBuyable(realPrice))
             BuyableSetter(true);
         else
             BuyableSetter(false);
@@ -30,16 +38,22 @@ public class StoreTableSale : ItemToBuy
     public override void BuyableSetter(bool value)
     {
         base.BuyableSetter(value);
-        //GetComponent<Button>().interactable = value;
     }
 
     public override void BuyItem()
     {
-        base.BuyItem();
-        buyZone.enabled = false;
-        clothesSpriteToDisplay.enabled = false;
-        clothesPriceToDisplay.text = "";
+        EventManager.UnsuscribeToEvent(EventNames._BuySomethingFromSeller, SetterBoolean);
+        EventManager.UnsuscribeToEvent(EventNames._BuySomethingFromTable, SetterBoolean);
 
-    }
+        if (isBuyable)
+        {
+            buyZone.enabled = false;
+            clothesSpriteToDisplay.enabled = false;
+            clothesPriceToDisplay.text = "";
+
+            EconomySystem.instance.SpendCoins(realPrice);
+            EventManager.TriggerEvent(eventName, _so);
+            BuyableSetter(false);
+        }    }
 
 }

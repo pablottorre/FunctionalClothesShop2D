@@ -7,6 +7,8 @@ public class ControllerPlayer : MonoBehaviour
     [Header("PlayerModel")]
     [SerializeField] ModelPlayer _mp;
 
+    private GameObject itemToBuyFromTable;
+
 
     void Start()
     {
@@ -18,14 +20,22 @@ public class ControllerPlayer : MonoBehaviour
     private void OnUpdateDelegate()
     {
         _mp.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+        if (itemToBuyFromTable)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                itemToBuyFromTable.GetComponentInParent<StoreTableSale>().BuyItem();
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 6)
         {
-            Debug.Log(collision.gameObject.name);
-            collision.gameObject.GetComponentInParent<StoreTableSale>().BuyItem();
+            itemToBuyFromTable = collision.gameObject;
+
         }
     }
 }

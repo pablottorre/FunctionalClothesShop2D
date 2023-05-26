@@ -23,14 +23,14 @@ public class StoreChatSale : ItemToBuy
         clothesPriceToDisplay.text = _cloth.clothesCost.ToString();
         _so = _cloth;
 
-        if (_so.clothesCost <= EconomySystem.instance.GetCurrentCoins())
-            BuyableSetter(true);
-        else
-            BuyableSetter(false);
+        SetterBoolean();
     }
 
     public override void BuyableSetter(bool value)
     {
+        EventManager.UnsuscribeToEvent(EventNames._BuySomethingFromSeller, SetterBoolean);
+        EventManager.UnsuscribeToEvent(EventNames._BuySomethingFromTable, SetterBoolean);
+
         base.BuyableSetter(value);
         GetComponent<Button>().interactable = value;
     }

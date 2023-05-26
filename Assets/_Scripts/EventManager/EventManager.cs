@@ -17,19 +17,19 @@ public class EventManager
         }
         if (!_Events.ContainsKey(eventType))
             _Events.Add(eventType, null);
-        _Events[eventType] += Listener; //Agrego una función (?
+        _Events[eventType] += Listener;
     }
 
     public static void UnsuscribeToEvent(string eventType, EventReceiver Listener)
     {
-        if (_Events.ContainsKey(eventType)) //Si contiene la key...
+        if (_Events.ContainsKey(eventType)) 
             _Events[eventType] -= Listener;
     }
 
     public static void TriggerEvent(string eventType, params object[] parametersWrapper)
     {
-        if (_Events.ContainsKey(eventType)) //Si existe la key del evento.
-            _Events[eventType](parametersWrapper); //LLamo a su función y le paso los params!
+        if (_Events.ContainsKey(eventType))
+            _Events[eventType](parametersWrapper);
     }
 
     public static void TriggerEvent(string eventType)
