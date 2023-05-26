@@ -21,7 +21,7 @@ public class StoreSellerManager : MonoBehaviour
 
         EventManager.SubscribeToEvent(EventNames._LoadUISeller, StartingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, EndingSequence);
-        EventManager.SubscribeToEvent(EventNames._LoadUISeller, EndingSequence);
+        EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, EndingSequence);
     }
 
     public virtual void StartingSequence(params object[] parameters)
@@ -29,6 +29,7 @@ public class StoreSellerManager : MonoBehaviour
         cg.alpha = 1;
         cg.interactable = true;
         cg.blocksRaycasts = true;
+        GetItemsFromPool();
     }
 
     public virtual void EndingSequence(params object[] parameters)

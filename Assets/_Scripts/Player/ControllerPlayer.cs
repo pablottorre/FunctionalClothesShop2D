@@ -9,27 +9,85 @@ public class ControllerPlayer : MonoBehaviour
 
     private GameObject itemToBuyFromTable;
 
+    private bool canMeditate;
+    private bool isMeditating;
+    private bool canMove;
+
+    private bool isOnBuyingZone;
+    private bool isOnBuyingMenu;
+
 
     void Start()
     {
         UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
+        EventManager.SubscribeToEvent(EventNames._GameStart, ResumeThePlayer);
+        EventManager.SubscribeToEvent(EventNames._StartMeditating, StartedMeditating);
+        EventManager.SubscribeToEvent(EventNames._StopMeditating, StopMeditating);
+        EventManager.SubscribeToEvent(EventNames._LoadUIInventory, PauseThePlayer);
+        EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, ResumeThePlayer);
     }
 
 
 
     private void OnUpdateDelegate()
     {
-        _mp.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        if (itemToBuyFromTable)
+        if (canMove)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            _mp.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (itemToBuyFromTable)
             {
                 itemToBuyFromTable.GetComponentInParent<StoreTableSale>().BuyItem();
             }
+            else if (canMeditate)
+            {
+                EventManager.TriggerEvent(EventNames._StartMeditating);
+            }
+            else if (isMeditating)
+            {
+                EventManager.TriggerEvent(EventNames._StopMeditating);
+            }
+            else if (isOnBuyingZone)
+            {
+                if (isOnBuyingMenu)
+                {
+                    EventManager.TriggerEvent(EventNames._LoadUIGlobal);
+                    isOnBuyingMenu = false;
+                }
+                else
+                {
+                    isOnBuyingMenu = true;
+                    EventManager.TriggerEvent(EventNames._LoadUISeller);
+                }
+            }
         }
+    }
 
+    private void PauseThePlayer(params object[] parameters)
+    {
+        canMove = false;
+    }
 
+    private void ResumeThePlayer(params object[] parameters)
+    {
+        canMove = true;
+    }
+
+    private void StartedMeditating(params object[] parameters)
+    {
+        canMeditate = false;
+        isMeditating = true;
+        canMove = false;
+    }
+
+    private void StopMeditating(params object[] parameters)
+    {
+        canMeditate = true;
+        isMeditating = false;
+        canMove = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,7 +95,34 @@ public class ControllerPlayer : MonoBehaviour
         if (collision.gameObject.layer == 6)
         {
             itemToBuyFromTable = collision.gameObject;
+        }
 
+        if (collision.gameObject.layer == 7)
+        {
+            canMeditate = true;
+        }
+
+        if (collision.gameObject.layer == 8)
+        {
+            isOnBuyingZone = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 6)
+        {
+            itemToBuyFromTable = null;
+        }
+
+        if (collision.gameObject.layer == 7)
+        {
+            canMeditate = false;
+        }
+
+        if (collision.gameObject.layer == 8)
+        {
+            isOnBuyingZone = false;
         }
     }
 }
