@@ -42,7 +42,10 @@ public class ItemToBuy : MonoBehaviour
     public virtual void BuyItem()
     {
         if (!InventoryManager.instance.canBuyWithSpace())
+        {
+            EventManager.TriggerEvent(EventNames._Inventoryfull);
             return;
+        }
 
         if (isBuyable)
         {
