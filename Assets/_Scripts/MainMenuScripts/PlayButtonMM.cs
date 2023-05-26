@@ -10,7 +10,7 @@ public class PlayButtonMM : MonoBehaviour
 
     private void Start()
     {
-        EventManager.SubscribeToEvent(EventNames._GameStart, LoadSceneToPlay);
+        EventManager.SubscribeToEvent(EventNames._GameStartButton, LoadSceneToPlay);
     }
 
 

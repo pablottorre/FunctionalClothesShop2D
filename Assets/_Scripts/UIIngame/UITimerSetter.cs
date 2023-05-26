@@ -12,6 +12,7 @@ public class UITimerSetter : UISetter
         base.Start();
         UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, functionToCall);
+        EventManager.SubscribeToEvent(EventNames._GameStart, functionToCall);
     }
 
     private void SetterTimer(params object[] parameters)

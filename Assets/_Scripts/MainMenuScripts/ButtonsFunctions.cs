@@ -6,7 +6,7 @@ public class ButtonsFunctions : MonoBehaviour
 {
     public void PlayButtonFunction()
     {
-        EventManager.TriggerEvent(EventNames._GameStart);
+        EventManager.TriggerEvent(EventNames._GameStartButton);
     }
 
     public void OptionsButtonFunction()

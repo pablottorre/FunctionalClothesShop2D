@@ -9,6 +9,7 @@ public class UIGlobalSetter : MonoBehaviour
 
     public void Start()
     {
+        EventManager.SubscribeToEvent(EventNames._GameStart, StartingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, StartingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, EndingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUISeller, EndingSequence);

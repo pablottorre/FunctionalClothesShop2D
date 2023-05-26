@@ -10,6 +10,7 @@ public class StoreTableManager : MonoBehaviour
     private void Start()
     {
         EventManager.SubscribeToEvent(EventNames._BuySomethingFromTable, RemoveItemFromList);
+        EventManager.SubscribeToEvent(EventNames._GameStart, SetTablesToDisplay);
     }
 
     private void RemoveItemFromList(params object[] parameters)
@@ -17,8 +18,7 @@ public class StoreTableManager : MonoBehaviour
         listOfClothes.Remove((ClothesSO)parameters[0]);
     }
 
-    [ContextMenu("hola")]
-    public void SetTablesToDisplay()
+    public void SetTablesToDisplay(params object[] parameters)
     {
         for (int i = 0; i < listOfTables.Count; i++)
         {

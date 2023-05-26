@@ -4,11 +4,11 @@ using UnityEngine;
 
 public static class EventNames
 {
+    public const string _GameStartButton = "GameStartButton";
     public const string _GameStart = "GameStart";
     public const string _GamePaused = "GamePaused";
     public const string _GameResumed = "GameResumed";
     public const string _OptionsStart = "OptionsStart";
-    public const string _PlayerEnterTheStore = "EnterTheStore";
     public const string _FinishedCreatingItemsPO = "EndOPItems";
     public const string _ShowItemsInStore = "ShowItemsInStore";
     public const string _BuySomethingFromSeller = "BuySomething";

@@ -11,12 +11,11 @@ public class ObjectPool : MonoBehaviour
     private void Awake()
     {
         objectPoolCollection.Clear();
-        //InstantiateObjects();
     }
 
     private void Start()
     {
-        EventManager.SubscribeToEvent(EventNames._PlayerEnterTheStore, InstantiateObjects);
+        EventManager.SubscribeToEvent(EventNames._GameStart, InstantiateObjects);
     }
 
     private void InstantiateObjects(params object[] parameters)
@@ -38,7 +37,7 @@ public class ObjectPool : MonoBehaviour
                 newObject.name = $"{objectPrefab.name}-{i}";
             }
             objectPoolCollection.Add(newObject);
-            newObject.SetActive(true);
+            newObject.SetActive(false);
         }
     }
 

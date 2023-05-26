@@ -15,6 +15,7 @@ public class UICoinSetter : UISetter
         EventManager.SubscribeToEvent(EventNames._BuySomethingFromTable, functionToCall);
         EventManager.SubscribeToEvent(EventNames._UpdateCoins, functionToCall);
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, functionToCall);
+        EventManager.SubscribeToEvent(EventNames._GameStart, functionToCall);
     }
 
     private void SetterCoins(params object[] parameters)
