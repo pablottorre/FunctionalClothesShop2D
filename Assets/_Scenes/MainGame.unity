@@ -3006,10 +3006,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalUI
       objectReference: {fileID: 0}
-    - target: {fileID: 7715919833281263418, guid: 716020fa856f3af47b82cfa9ad4c7fa2, type: 3}
-      propertyPath: m_Alpha
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 716020fa856f3af47b82cfa9ad4c7fa2, type: 3}
 --- !u!224 &2041517903909987669 stripped

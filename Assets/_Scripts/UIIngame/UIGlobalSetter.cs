@@ -12,7 +12,6 @@ public class UIGlobalSetter : MonoBehaviour
     [Header("ClockAnimation")]
     [SerializeField] Image clockFill;
     private float timerMax;
-    private float currentTimer;
 
     [Header("Dialogues")]
     [SerializeField] GameObject dialogueParent;

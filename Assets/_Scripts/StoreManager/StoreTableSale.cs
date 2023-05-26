@@ -41,14 +41,12 @@ public class StoreTableSale : ItemToBuy
     {
         if (isBuyable)
         {
-            DisableItemOnSale();         
+            DisableItemOnSale();
             EconomySystem.instance.SpendCoins(realPrice);
             EventManager.TriggerEvent(eventName, _so);
             BuyableSetter(false);
-            
         }
 
-        GetComponent<StoreTableSale>().enabled = false;
     }
 
     public void EnableEAnimation()
@@ -62,7 +60,7 @@ public class StoreTableSale : ItemToBuy
     private void DisableItemOnSale()
     {
         buyZone.enabled = false;
-        clothesSpriteToDisplay.enabled = false;
+        clothesSpriteToDisplay.sprite = null;
         clothesPriceToDisplay.text = "";
         spriteToBuy.SetActive(false);
     }
