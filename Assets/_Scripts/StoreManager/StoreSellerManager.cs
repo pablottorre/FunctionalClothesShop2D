@@ -5,21 +5,45 @@ using UnityEngine;
 public class StoreSellerManager : StoreManager
 {
     public List<GameObject> itemsFromPool;
+    [SerializeField] private ObjectPool _op;
+
+
+    [Header("Canvas Group")]
+    [SerializeField] CanvasGroup cg;
 
 
     private void Start()
     {
-        Debug.Log(423);
-        EventManager.SubscribeToEvent(EventNames._FinishedCreatingItemsPO, GetItemsFromPool);
         EventManager.SubscribeToEvent(EventNames._ShowItemsInStore, SetChatToDisplay);
+
+        EventManager.SubscribeToEvent(EventNames._LoadUISeller, StartingSequence);
+        EventManager.SubscribeToEvent(EventNames._LoadUIInventory, EndingSequence);
+        EventManager.SubscribeToEvent(EventNames._LoadUISeller, EndingSequence);
     }
 
-    public void GetItemsFromPool(params object[] parameters)
+    public virtual void StartingSequence(params object[] parameters)
     {
-        Debug.Log(345);
-        itemsFromPool = (List<GameObject>)parameters[0];
+        cg.alpha = 1;
+        cg.interactable = true;
+        cg.blocksRaycasts = true;
+    }
+
+    public virtual void EndingSequence(params object[] parameters)
+    {
+        cg.alpha = 0;
+        cg.interactable = false;
+        cg.blocksRaycasts = false;
+    }
+
+
+
+    [ContextMenu("xcv")]
+    public void GetItemsFromPool()
+    {
+        itemsFromPool = _op.objectPoolCollection;
         SetChatToDisplay();
     }
+
 
     public void SetChatToDisplay(params object[] parameters)
     {

@@ -11,6 +11,7 @@ public class UITimerSetter : UISetter
         functionToCall = SetterTimer;
         base.Start();
         UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
+        EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, functionToCall);
     }
 
     private void SetterTimer(params object[] parameters)
