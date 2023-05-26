@@ -82,6 +82,10 @@ public class StoreSellerManager : MonoBehaviour
 
     public void UpdatePlayerUI(params object[] parameters)
     {
+
+        if (cg.alpha == 0)
+            return;
+
         for (int i = 0; i < InventoryManager.instance.GetterOwnedClothes().Count; i++)
         {
             itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterCell(InventoryManager.instance.GetterOwnedClothes()[i]);

@@ -148,6 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6642633761825624161}
   - component: {fileID: 6642633761825624160}
+  - component: {fileID: 9035721848092792760}
   m_Layer: 0
   m_Name: ClothesSprite
   m_TagString: Untagged
@@ -223,6 +224,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &9035721848092792760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6642633761825624190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15be3067f795b143acb646fa747173e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inUpdate: 0
+  orderMod: 0
+  spr: []
 --- !u!1 &6642633762284091046
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +534,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 150
   m_TargetDisplay: 0
 --- !u!114 &6642633762515331112
 MonoBehaviour:

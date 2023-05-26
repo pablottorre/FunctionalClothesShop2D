@@ -75,20 +75,14 @@ public class InventorySystem : MonoBehaviour
 
         for (int i = 0; i < clothesEquiped.Count; i++)
         {
-            gridEquipment[i].GetComponent<ItemCellSetter>().SetterCell(clothesEquiped[i]);
+            gridEquipment[(int)clothesEquiped[i].typeOfClothes].GetComponent<ItemCellSetter>().SetterCell(clothesEquiped[i]);
         }
     }
 
     private void UpdateInventoryAfterEquip(params object[] parameters)
     {
         clothesEquiped.Add((ClothesSO)parameters[0]);
-        for (int i = 0; i < gridEquipment.Count; i++)
-        {
-            if (gridEquipment[i].GetComponent<ItemCellSetter>().GetterType() == clothesEquiped[clothesEquiped.Count-1].typeOfClothes)
-            {
-                gridEquipment[i].GetComponent<ItemCellSetter>().SetterCell(clothesEquiped[clothesEquiped.Count - 1]);
-            }
-        }        
+        gridEquipment[(int)clothesEquiped[clothesEquiped.Count - 1].typeOfClothes].GetComponent<ItemCellSetter>().SetterCell(clothesEquiped[clothesEquiped.Count - 1]);       
         currentCell.GetComponent<ItemCellSetter>().ResetCell();
         currentCell = null;
         clothesOwned.Remove((ClothesSO)parameters[0]);
