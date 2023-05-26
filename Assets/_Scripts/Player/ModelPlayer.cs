@@ -19,8 +19,7 @@ public class ModelPlayer : MonoBehaviour
         if (horizontal != 0 || vertical != 0)
         {
             _anim.SetBool("isWalking", true);
-            _anim.SetFloat("DirX",-horizontal);
-            _anim.SetFloat("DirY", -vertical);
+            _anim.SetFloat("DirX",horizontal);
         }
         else
         {
