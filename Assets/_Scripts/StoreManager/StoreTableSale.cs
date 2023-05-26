@@ -65,6 +65,12 @@ public class StoreTableSale : ItemToBuy
 
     public override void BuyItem()
     {
+        if (!InventoryManager.instance.canBuyWithSpace())
+        {
+            EventManager.TriggerEvent(EventNames._Inventoryfull);
+            return;
+        }
+
         if (isBuyable)
         {
             DisableItemOnSale();
