@@ -191,7 +191,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 266.5, y: -152.66}
+  m_AnchoredPosition: {x: 266.5, y: -152.66002}
   m_SizeDelta: {x: 533, y: 305.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2781341059476248655
@@ -414,7 +414,22 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 004cc9b726d9f7f46a20bbb3aa0a3bbe, type: 2}
   _opSellerItem: {fileID: 2781341059476248655}
   _opOwnItem: {fileID: 0}
+  goldText: {fileID: 0}
+  dialogueText: {fileID: 0}
   cg: {fileID: 0}
+  buyingDialogues:
+  - {fileID: 11400000, guid: 027645b9294892f4380dd3b4ef834807, type: 2}
+  - {fileID: 11400000, guid: 490e1fba1c7cd7243b5a783b78088de8, type: 2}
+  - {fileID: 11400000, guid: bc668e8f9bd4cbe46b2fc799894cb98a, type: 2}
+  - {fileID: 11400000, guid: 2d3bf7d39d7efd94387915a587fc4a52, type: 2}
+  - {fileID: 11400000, guid: c179694f3a8915b4fb39d0f35abe04cb, type: 2}
+  - {fileID: 11400000, guid: 89b26b6e355e9f9488e61638e892b8ed, type: 2}
+  sellingDialogues:
+  - {fileID: 11400000, guid: 1a4c1ce8c6873324fa42714d53518491, type: 2}
+  - {fileID: 11400000, guid: 9ae2c65765c1dc944af0b03d84c0040a, type: 2}
+  - {fileID: 11400000, guid: 192e5d09f56b65e4abe4b5ee70ed929a, type: 2}
+  - {fileID: 11400000, guid: dd2939581d0a46f4686ff61890c8b68f, type: 2}
+  - {fileID: 11400000, guid: 719dd9eae9066954d8da7a4d472a2bb6, type: 2}
 --- !u!1 &7318230150333456492
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,8 +627,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2191614108197645007}
   m_HandleRect: {fileID: 4582451966392047984}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.70935005
+  m_Value: 1.0000001
+  m_Size: 0.66072756
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

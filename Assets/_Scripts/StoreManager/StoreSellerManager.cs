@@ -12,10 +12,16 @@ public class StoreSellerManager : MonoBehaviour
     [SerializeField] private ObjectPool _opSellerItem;
     [SerializeField] private ObjectPool _opOwnItem;
     [SerializeField] private TMP_Text goldText;
+    [SerializeField] private TMP_Text dialogueText;
 
 
     [Header("Canvas Group")]
     [SerializeField] CanvasGroup cg;
+
+    [Header("Dialogue")]
+    [SerializeField] List<DialoguesSO> buyingDialogues = new List<DialoguesSO>();
+    [SerializeField] List<DialoguesSO> sellingDialogues = new List<DialoguesSO>();
+
 
 
     private void Start()
@@ -77,13 +83,15 @@ public class StoreSellerManager : MonoBehaviour
 
     public void RemoveItemFromList(params object[] parameters)
     {
+        StopCoroutine(HideDialogue());
         listOfClothes.Remove((ClothesSO)parameters[0]);
+        dialogueText.text = buyingDialogues[Random.Range(0, buyingDialogues.Count)].dialogueText;
+        StartCoroutine(HideDialogue());
         UpdateGoldText();
     }
 
     public void UpdatePlayerUI(params object[] parameters)
     {
-
         if (cg.alpha == 0)
             return;
 
@@ -97,11 +105,20 @@ public class StoreSellerManager : MonoBehaviour
 
     public void SellItems(params object[] parameters)
     {
+        StopCoroutine(HideDialogue());
         UpdateGoldText();
+        dialogueText.text = sellingDialogues[Random.Range(0, sellingDialogues.Count)].dialogueText;
+        StartCoroutine(HideDialogue());
     }
 
     private void UpdateGoldText()
     {
         goldText.text = EconomySystem.instance.GetCurrentCoins().ToString();
+    }
+
+    IEnumerator HideDialogue()
+    {
+        yield return new WaitForSecondsRealtime(6);
+        dialogueText.text = "";
     }
 }

@@ -24,20 +24,7 @@ public class ModelPlayer : MonoBehaviour
     {
         Vector2 moveDir = new Vector2(horizontal, vertical);
         moveDir = moveDir.normalized * _moveSpeed * Time.deltaTime;
-        _rb.velocity = moveDir;
-
-
-        /*if (Mathf.Abs(horizontal)< 0.01f)
-        {
-            _rb.velocity = new Vector2(0,_rb.velocity.y);
-
-        }
-
-        if (Mathf.Abs(vertical) < 0.01f)
-        {
-            _rb.velocity = new Vector2(_rb.velocity.x, 0);
-        }*/
-        
+        _rb.velocity = moveDir;        
     }
 
 }

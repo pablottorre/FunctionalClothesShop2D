@@ -496,6 +496,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff6fc13b0458754ebee23da6f22b3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _so: {fileID: 0}
+  isBuyable: 0
+  eventName: 
   clothesSpriteToDisplay: {fileID: 4396935268634020410}
   clothesNameToDisplay: {fileID: 4699955592110292396}
   clothesPriceToDisplay: {fileID: 8418196319980030780}
@@ -566,7 +569,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6858813d0f1f28b4cafee677b3e2e49b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37b388a5217aba141900a0ac698315c5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
