@@ -22,10 +22,15 @@ public class UIGlobalSetter : MonoBehaviour
     [SerializeField] GameObject darkWizardPortrait;
     [SerializeField] private TMP_Text dialogueText;
 
+    [Header("StartingCinematic")]
+    [SerializeField] private Image imageFade;
+    [SerializeField] private float speedFade;
+    private float currentFade = 1;
+
     public void Start()
     {
 
-        EventManager.SubscribeToEvent(EventNames._GameStart, StartingSequence);
+        EventManager.SubscribeToEvent(EventNames._GameStart, StartingCinematic);
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, StartingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, EndingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUISeller, EndingSequence);
@@ -41,6 +46,14 @@ public class UIGlobalSetter : MonoBehaviour
         cg.interactable = true;
         cg.blocksRaycasts = true;
     }
+
+    private void StartingCinematic(params object[] parameters)
+    {
+        cg.alpha = 1;
+        cg.interactable = true;
+        cg.blocksRaycasts = true;
+    }
+
 
     public virtual void EndingSequence(params object[] parameters)
     {
@@ -80,6 +93,12 @@ public class UIGlobalSetter : MonoBehaviour
     private void OnUpdateDelegate()
     {
         clockFill.fillAmount = TimeSystem.instance.GetCurrentMinutesTime() / timerMax;
+
+        if (currentFade > 0)
+        {
+            currentFade -= Time.deltaTime * speedFade; 
+            imageFade.fillAmount = currentFade;
+        }
     }
 
 }
