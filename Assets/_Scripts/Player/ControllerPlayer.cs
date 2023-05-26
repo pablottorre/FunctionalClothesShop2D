@@ -31,7 +31,7 @@ public class ControllerPlayer : MonoBehaviour
 
     private void OnUpdateDelegate()
     {
-        if (canMove)
+        if (canMove && !isMeditating)
         {
             _mp.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
