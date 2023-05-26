@@ -6,7 +6,13 @@ public class CounterManager : MonoBehaviour
 {
     [SerializeField] GameObject spriteToMeditate;
 
-    public void EnableEAnimation()
+    private void Start()
+    {
+        EventManager.SubscribeToEvent( EventNames._LoadUIGlobal,EnableEAnimation);
+        EventManager.SubscribeToEvent( EventNames._LoadUISeller,EnableEAnimation);
+    }
+
+    public void EnableEAnimation(params object[] parameters)
     {
         if (spriteToMeditate.activeInHierarchy)
             spriteToMeditate.SetActive(false);
