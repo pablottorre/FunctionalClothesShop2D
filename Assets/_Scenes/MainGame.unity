@@ -141,13 +141,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1405492287}
     m_Modifications:
+    - target: {fileID: 723554022336955842, guid: 903656fb09b8b59478b726ea375524f9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.018432617
+      objectReference: {fileID: 0}
     - target: {fileID: 2781341059097467415, guid: 903656fb09b8b59478b726ea375524f9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 2781341059476248654, guid: 903656fb09b8b59478b726ea375524f9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -152.66
+      value: -100.84268
       objectReference: {fileID: 0}
     - target: {fileID: 2781341060331137200, guid: 903656fb09b8b59478b726ea375524f9, type: 3}
       propertyPath: m_AnchorMax.x
@@ -417,6 +421,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4582451966392047984, guid: 903656fb09b8b59478b726ea375524f9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582451966392047984, guid: 903656fb09b8b59478b726ea375524f9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582451966392047984, guid: 903656fb09b8b59478b726ea375524f9, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221119204372510442, guid: 903656fb09b8b59478b726ea375524f9, type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221119204372510442, guid: 903656fb09b8b59478b726ea375524f9, type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9221119204372510442, guid: 903656fb09b8b59478b726ea375524f9, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 903656fb09b8b59478b726ea375524f9, type: 3}
 --- !u!114 &500538234 stripped
@@ -527,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecb675b855bede4c8cd75718a3e00ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCoins: 5555
+  currentCoins: 150
 --- !u!4 &777267581
 Transform:
   m_ObjectHideFlags: 0

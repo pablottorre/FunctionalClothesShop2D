@@ -33,8 +33,8 @@ public class InventorySystem : MonoBehaviour
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, StartingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, EndingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUISeller, EndingSequence);
-        EventManager.SubscribeToEvent(EventNames._BuySomethingFromSeller, AddItemToInventoryFromSeller);
-        EventManager.SubscribeToEvent(EventNames._BuySomethingFromTable, AddItemToInventoryFromTable);
+        EventManager.SubscribeToEvent(EventNames._BuySomethingFromSeller, AddItemToInventory);
+        EventManager.SubscribeToEvent(EventNames._BuySomethingFromTable, AddItemToInventory);
     }
 
     public virtual void StartingSequence(params object[] parameters)
@@ -65,15 +65,9 @@ public class InventorySystem : MonoBehaviour
         }
     }
 
-    public void AddItemToInventoryFromSeller(params object[] parameters)
+    public void AddItemToInventory(params object[] parameters)
     {
-        GameObject temp = (GameObject)parameters[0];
-        clothesOwned.Add(temp.GetComponent<StoreChatSale>().GetterSO());
-    }
-    
-    public void AddItemToInventoryFromTable(params object[] parameters)
-    {
-        /*GameObject temp = (GameObject)parameters[0];
-        clothesOwned.Add(temp.GetComponent<StoreChatSale>().GetterSO());*/
+
+        clothesOwned.Add((ClothesSO)parameters[0]);
     }
 }

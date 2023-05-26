@@ -15,6 +15,7 @@ public class StoreSellerManager : StoreManager
     private void Start()
     {
         EventManager.SubscribeToEvent(EventNames._ShowItemsInStore, SetChatToDisplay);
+        EventManager.SubscribeToEvent(EventNames._BuySomethingFromSeller, RemoveItemFromList);
 
         EventManager.SubscribeToEvent(EventNames._LoadUISeller, StartingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, EndingSequence);
@@ -52,5 +53,10 @@ public class StoreSellerManager : StoreManager
             itemsFromPool[i].GetComponent<StoreChatSale>().SetChatSale(listOfClothes[i]);
             itemsFromPool[i].SetActive(true);
         }
+    }
+
+    public void RemoveItemFromList(params object[] parameters)
+    {
+        listOfClothes.Remove((ClothesSO)parameters[0]);
     }
 }

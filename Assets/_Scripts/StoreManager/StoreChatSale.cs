@@ -26,29 +26,26 @@ public class StoreChatSale : MonoBehaviour
         clothesPriceToDisplay.text = _cloth.clothesCost.ToString();
         _so = _cloth;
 
-        BuyableSetter();
+        if (_so.clothesCost <= EconomySystem.instance.GetCurrentCoins())
+            BuyableSetter(true);
+        else
+            BuyableSetter(false);
 
     }
 
-    private void BuyableSetter()
+    private void BuyableSetter(bool value)
     {
-        Debug.Log(EconomySystem.instance.GetCurrentCoins());
-        if (_so.clothesCost <= EconomySystem.instance.GetCurrentCoins())
-        {
-            isBuyable = true;
-        }
-        else
-        {
-            isBuyable = false;
-        }
+
+        GetComponent<Button>().interactable = value;
+        isBuyable = value;
     }
 
     public void BuyItem()
     {
         if (isBuyable)
         {
-        Debug.Log("456");
-            EventManager.TriggerEvent(EventNames._BuySomethingFromSeller, this.gameObject);
+            EventManager.TriggerEvent(EventNames._BuySomethingFromSeller, _so);
+            BuyableSetter(false);
         }
     }
 }
