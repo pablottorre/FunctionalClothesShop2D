@@ -14,6 +14,7 @@ public class InventorySystem : MonoBehaviour
     [SerializeField] CanvasGroup cg;
 
     private ClothesSO selectedSO;
+    private GameObject currentCell;
 
     public void Start()
     {
@@ -21,6 +22,7 @@ public class InventorySystem : MonoBehaviour
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, EndingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUISeller, EndingSequence);
         EventManager.SubscribeToEvent(EventNames._SelectItemOnInvetory, SelectItemOnInventory);
+        EventManager.SubscribeToEvent(EventNames._EquipItemToInventory, UpdateInventoryAfterEquip);
     }
 
     public virtual void StartingSequence(params object[] parameters)
@@ -48,7 +50,13 @@ public class InventorySystem : MonoBehaviour
 
         for (int i = 0; i < _op.objectPoolCollection.Count; i++)
         {
+            _op.objectPoolCollection[i].GetComponent<ItemCellSetter>().ResetCell();
             _op.objectPoolCollection[i].SetActive(false);
+        }
+
+        for (int i = 0; i < gridEquipment.Count; i++)
+        {
+            gridEquipment[i].GetComponent<ItemCellSetter>().ResetCell();
         }
     }
     private void SetClothesOnInventory()
@@ -62,6 +70,21 @@ public class InventorySystem : MonoBehaviour
         {
             gridEquipment[i].GetComponent<ItemCellSetter>().SetterCell(clothesEquiped[i]);
         }
+    }
+
+    private void UpdateInventoryAfterEquip(params object[] parameters)
+    {
+        clothesEquiped.Add((ClothesSO)parameters[0]);
+        for (int i = 0; i < gridEquipment.Count; i++)
+        {
+            if (gridEquipment[i].GetComponent<ItemCellSetter>().GetterType() == clothesEquiped[clothesEquiped.Count-1].typeOfClothes)
+            {
+                gridEquipment[i].GetComponent<ItemCellSetter>().SetterCell(clothesEquiped[clothesEquiped.Count - 1]);
+            }
+        }        
+        currentCell.GetComponent<ItemCellSetter>().ResetCell();
+        currentCell = null;
+        clothesOwned.Remove((ClothesSO)parameters[0]);
     }
 
     private void SelectItemOnInventory(params object[] parameters)
@@ -78,5 +101,6 @@ public class InventorySystem : MonoBehaviour
                 gridEquipment[i].GetComponent<ItemCellSetter>().SetterAvailable(true);
             }
         }
+        currentCell = (GameObject)parameters[1];
     }
 }

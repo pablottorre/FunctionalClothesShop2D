@@ -10,7 +10,6 @@ public class MeditationManager : MonoBehaviour
     {
         EventManager.SubscribeToEvent(EventNames._StartMeditating, StartMeditating);
         EventManager.SubscribeToEvent(EventNames._StopMeditating, StopMeditating);
-        UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
     }
 
     private void StartMeditating(params object[] parameters)
@@ -31,14 +30,6 @@ public class MeditationManager : MonoBehaviour
             yield return new WaitForSecondsRealtime(1);
             EconomySystem.instance.AddCoins(5);
             EventManager.TriggerEvent(EventNames._UpdateCoins);
-        }
-    }
-
-    private void OnUpdateDelegate()
-    {
-        if (isMeditating)
-        {
-
         }
     }
 }

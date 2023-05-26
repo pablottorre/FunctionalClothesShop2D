@@ -22,4 +22,5 @@ public static class EventNames
     public const string _LoadUIInventory = "LoaUIInventory";
     public const string _LoadUISeller = "LoadUISeller";
     public const string _SelectItemOnInvetory = "SelectItemInventory";
+    public const string _EquipItemToInventory = "EquipItemInventory";
 }
