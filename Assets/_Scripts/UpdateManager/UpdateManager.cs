@@ -40,7 +40,6 @@ public class UpdateManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(789);
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.I))
         {

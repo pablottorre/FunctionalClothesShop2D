@@ -32,6 +32,8 @@ public class InventorySystem : MonoBehaviour
         {
             _op.objectPoolCollection[i].SetActive(true);
         }
+
+        SetClothesOnInventory();
     }
 
     public virtual void EndingSequence(params object[] parameters)
@@ -45,8 +47,6 @@ public class InventorySystem : MonoBehaviour
             _op.objectPoolCollection[i].SetActive(false);
         }
     }
-
-    [ContextMenu("SetCellsOnInventory")]
     private void SetClothesOnInventory()
     {
         for (int i = 0; i < clothesOwned.Count; i++)
