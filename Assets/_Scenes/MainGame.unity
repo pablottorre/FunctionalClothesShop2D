@@ -1954,7 +1954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
       propertyPath: listOfClothes.Array.size
-      value: 5
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
       propertyPath: itemsOnSale.Array.data[0]
@@ -1991,23 +1991,131 @@ PrefabInstance:
     - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
       propertyPath: listOfClothes.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: eb41f1eedda4e924084a9add946b4430, type: 2}
+      objectReference: {fileID: 11400000, guid: 4458b3836bc72f243b11b19f8751004f, type: 2}
     - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
       propertyPath: listOfClothes.Array.data[1]
       value: 
-      objectReference: {fileID: 11400000, guid: 399e3971c3dc905489d433a27372f9bf, type: 2}
+      objectReference: {fileID: 11400000, guid: 5f682567d32ef4142839239589fb0c24, type: 2}
     - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
       propertyPath: listOfClothes.Array.data[2]
       value: 
-      objectReference: {fileID: 11400000, guid: e02822607df189143b1c9b1878c3cdb7, type: 2}
+      objectReference: {fileID: 11400000, guid: b64f290b3356209439b641cc00640e3f, type: 2}
     - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
       propertyPath: listOfClothes.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 5cb14caeb3f70fc4d8fc8174f2d166bb, type: 2}
+      objectReference: {fileID: 11400000, guid: 4183fec2e19aa4f478eb037c2c2b5ed6, type: 2}
     - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
       propertyPath: listOfClothes.Array.data[4]
       value: 
+      objectReference: {fileID: 11400000, guid: eb41f1eedda4e924084a9add946b4430, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: b8dce1e159c66f04cbbc3a583a466bbf, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: c3fde888080bde24aafebbe6a2ce7410, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e81a1a1e85480140a2158081b2952fd, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9cf0fe1362bcd664cafd457003f41ba0, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 399e3971c3dc905489d433a27372f9bf, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3b63b37061e84bc438899223bdad4fd0, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: 034697285d9d8e3409cf7f0002ea71eb, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: 643bee5a967f9b144adde9d10c91a16f, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b4f82c8fb07075438ca71acecb44766, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6427124b976cd2042bb519a4d7637784, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: e02822607df189143b1c9b1878c3cdb7, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[16]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fd7ea987c2d9d343a2da146e3c66f34, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[17]
+      value: 
+      objectReference: {fileID: 11400000, guid: daac231f5164e26488f6f4b3b4a1865f, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[18]
+      value: 
+      objectReference: {fileID: 11400000, guid: d3c019ff3f84a294eab6b9390a2a41ae, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[19]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53e40efa0262a214692eeb7eb3b044df, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[20]
+      value: 
+      objectReference: {fileID: 11400000, guid: edfa0500d7ef3674ca9444f198c3cfe1, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[21]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f629e54728d7694abe47c4b1e6d53bc, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[22]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2fcf4339d5545ff4aaff8913bc1a39ce, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[23]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6561e2a3d93c8874795263b67db32aa8, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[24]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d5dd603aaeae364ab3fbddf1b8d487d, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[25]
+      value: 
       objectReference: {fileID: 11400000, guid: 004cc9b726d9f7f46a20bbb3aa0a3bbe, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[26]
+      value: 
+      objectReference: {fileID: 11400000, guid: e8d0df96c8dcdf841a2e113f824249be, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[27]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d8cf60f1fd2f6c45b31ba4f8619f22c, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[28]
+      value: 
+      objectReference: {fileID: 11400000, guid: b6a3a5d590d380b468f483493659f7fd, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[29]
+      value: 
+      objectReference: {fileID: 11400000, guid: 11627b21b374fb54cb76083b005d0855, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[30]
+      value: 
+      objectReference: {fileID: 11400000, guid: b7d5a40c850b72144a6bddef1e12d307, type: 2}
+    - target: {fileID: 4871344333414039922, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
+      propertyPath: listOfClothes.Array.data[31]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5cb14caeb3f70fc4d8fc8174f2d166bb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab762148c4774594592d84fb36f3b8d2, type: 3}
 --- !u!4 &1842599515 stripped
@@ -2223,7 +2331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.21900001, y: 0.13800001}
   m_AnchorMax: {x: 0.7757778, y: 0.43035442}
-  m_AnchoredPosition: {x: 2, y: 2.933075}
+  m_AnchoredPosition: {x: 2, y: 2.9331055}
   m_SizeDelta: {x: -14.986206, y: -31.655945}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884185214
@@ -2756,6 +2864,30 @@ PrefabInstance:
     - target: {fileID: 7643497722338926510, guid: 4df275e5539025941ba43a8ca6b78d65, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.28222656
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209365818449436109, guid: 4df275e5539025941ba43a8ca6b78d65, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209365818449436109, guid: 4df275e5539025941ba43a8ca6b78d65, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209365818449436109, guid: 4df275e5539025941ba43a8ca6b78d65, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209365818449436109, guid: 4df275e5539025941ba43a8ca6b78d65, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209365818449436109, guid: 4df275e5539025941ba43a8ca6b78d65, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209365818449436109, guid: 4df275e5539025941ba43a8ca6b78d65, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4df275e5539025941ba43a8ca6b78d65, type: 3}
@@ -3570,6 +3702,134 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.5899124
       objectReference: {fileID: 0}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.size
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e8d0df96c8dcdf841a2e113f824249be, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d8cf60f1fd2f6c45b31ba4f8619f22c, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b6a3a5d590d380b468f483493659f7fd, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 11627b21b374fb54cb76083b005d0855, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: b7d5a40c850b72144a6bddef1e12d307, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5cb14caeb3f70fc4d8fc8174f2d166bb, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4458b3836bc72f243b11b19f8751004f, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5f682567d32ef4142839239589fb0c24, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[8]
+      value: 
+      objectReference: {fileID: 11400000, guid: b64f290b3356209439b641cc00640e3f, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[9]
+      value: 
+      objectReference: {fileID: 11400000, guid: 4183fec2e19aa4f478eb037c2c2b5ed6, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[10]
+      value: 
+      objectReference: {fileID: 11400000, guid: eb41f1eedda4e924084a9add946b4430, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[11]
+      value: 
+      objectReference: {fileID: 11400000, guid: b8dce1e159c66f04cbbc3a583a466bbf, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[12]
+      value: 
+      objectReference: {fileID: 11400000, guid: c3fde888080bde24aafebbe6a2ce7410, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[13]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3e81a1a1e85480140a2158081b2952fd, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[14]
+      value: 
+      objectReference: {fileID: 11400000, guid: 9cf0fe1362bcd664cafd457003f41ba0, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: 399e3971c3dc905489d433a27372f9bf, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[16]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3b63b37061e84bc438899223bdad4fd0, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[17]
+      value: 
+      objectReference: {fileID: 11400000, guid: 034697285d9d8e3409cf7f0002ea71eb, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[18]
+      value: 
+      objectReference: {fileID: 11400000, guid: 643bee5a967f9b144adde9d10c91a16f, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[19]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b4f82c8fb07075438ca71acecb44766, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[20]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6427124b976cd2042bb519a4d7637784, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[21]
+      value: 
+      objectReference: {fileID: 11400000, guid: e02822607df189143b1c9b1878c3cdb7, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[22]
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fd7ea987c2d9d343a2da146e3c66f34, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[23]
+      value: 
+      objectReference: {fileID: 11400000, guid: daac231f5164e26488f6f4b3b4a1865f, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[24]
+      value: 
+      objectReference: {fileID: 11400000, guid: d3c019ff3f84a294eab6b9390a2a41ae, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[25]
+      value: 
+      objectReference: {fileID: 11400000, guid: 53e40efa0262a214692eeb7eb3b044df, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[26]
+      value: 
+      objectReference: {fileID: 11400000, guid: edfa0500d7ef3674ca9444f198c3cfe1, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[27]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0f629e54728d7694abe47c4b1e6d53bc, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[28]
+      value: 
+      objectReference: {fileID: 11400000, guid: 2fcf4339d5545ff4aaff8913bc1a39ce, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[29]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6561e2a3d93c8874795263b67db32aa8, type: 2}
+    - target: {fileID: 5075163525733733844, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: listOfClothes.Array.data[30]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6d5dd603aaeae364ab3fbddf1b8d487d, type: 2}
     - target: {fileID: 5940822601890646817, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
       propertyPath: m_Name
       value: SellerUI
