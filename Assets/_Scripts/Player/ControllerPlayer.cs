@@ -25,6 +25,7 @@ public class ControllerPlayer : MonoBehaviour
     void Start()
     {
         UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
+        UpdateManager.instance.OnFixedUpdateDelegate += OnFixedUpdateDelegate;
         EventManager.SubscribeToEvent(EventNames._GameStart, ResumeThePlayer);
         EventManager.SubscribeToEvent(EventNames._StartMeditating, StartedMeditating);
         EventManager.SubscribeToEvent(EventNames._StopMeditating, StopMeditating);
@@ -37,11 +38,6 @@ public class ControllerPlayer : MonoBehaviour
 
     private void OnUpdateDelegate()
     {
-        if (canMove && !isMeditating)
-        {
-            _mp.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        }
-
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (itemToBuyFromTable)
@@ -72,6 +68,14 @@ public class ControllerPlayer : MonoBehaviour
                     EventManager.TriggerEvent(EventNames._LoadUISeller);
                 }
             }
+        }
+    }
+
+    private void OnFixedUpdateDelegate()
+    {
+        if (canMove && !isMeditating)
+        {
+            _mp.Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         }
     }
 

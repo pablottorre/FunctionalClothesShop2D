@@ -298,11 +298,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &281721540 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4208276193086056417, guid: a4cb15246e3db014a87330144402188b, type: 3}
-  m_PrefabInstance: {fileID: 5375151359962216941}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &398858513
 GameObject:
   m_ObjectHideFlags: 0
@@ -3397,18 +3392,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4208276193086056417, guid: a4cb15246e3db014a87330144402188b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5375151358708299616, guid: a4cb15246e3db014a87330144402188b, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5375151358708299618, guid: a4cb15246e3db014a87330144402188b, type: 3}
-      propertyPath: animationCoin
-      value: 
-      objectReference: {fileID: 281721540}
     - target: {fileID: 5375151358708299619, guid: a4cb15246e3db014a87330144402188b, type: 3}
       propertyPath: m_RootOrder
       value: 2
