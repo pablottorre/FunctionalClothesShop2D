@@ -27,4 +27,5 @@ public static class EventNames
     public const string _UnequipItemFromInvetory = "UnequipFromItemInventory";
     public const string _RerollItemsFromTables = "RerollItemFromTables";
     public const string _Inventoryfull = "InventoryFull";
+    public const string _TriggerCoinAnimation = "TriggerCoinAnimation";
 }

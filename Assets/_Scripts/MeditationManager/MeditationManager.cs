@@ -27,9 +27,10 @@ public class MeditationManager : MonoBehaviour
     {
         while (isMeditating)
         {
-            yield return new WaitForSecondsRealtime(1);
-            EconomySystem.instance.AddCoins(5);
+            yield return new WaitForSecondsRealtime(2);
+            EconomySystem.instance.AddCoins(10);
             EventManager.TriggerEvent(EventNames._UpdateCoins);
+            EventManager.TriggerEvent(EventNames._TriggerCoinAnimation);
         }
     }
 }

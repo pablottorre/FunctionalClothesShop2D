@@ -16,7 +16,10 @@ public class ControllerPlayer : MonoBehaviour
     private bool isOnBuyingZone;
     private bool isOnBuyingMenu;
 
+    [Header("CoinAnimation")]
+    [SerializeField] private GameObject animationCoin;
     private MeditationRug lastMediationZone;
+
 
 
     void Start()
@@ -27,6 +30,7 @@ public class ControllerPlayer : MonoBehaviour
         EventManager.SubscribeToEvent(EventNames._StopMeditating, StopMeditating);
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, PauseThePlayer);
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, ResumeThePlayer);
+        EventManager.SubscribeToEvent(EventNames._TriggerCoinAnimation, StartCoinAnimation);
     }
 
 
@@ -91,6 +95,11 @@ public class ControllerPlayer : MonoBehaviour
         canMeditate = true;
         isMeditating = false;
         canMove = true;
+    }
+
+    private void StartCoinAnimation(params object[] parameters)
+    {
+        animationCoin.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
