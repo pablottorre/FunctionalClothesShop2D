@@ -22,7 +22,7 @@ public class UITimerSetter : UISetter
 
     private void SetText()
     {
-        fillmentText.text = TimeSystem.instance.GetCurrentFullTime();
+        fillmentText.text = TimeSystem.instance.GetCurrentFullTimeInversed();
     }
 
     private void OnUpdateDelegate()

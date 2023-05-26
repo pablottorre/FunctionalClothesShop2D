@@ -7,7 +7,7 @@ public class TimeSystem : MonoBehaviour
     public static TimeSystem instance;
     bool startCounting;
     float minutes;
-    float hours = 8;
+    [SerializeField] private float maxTimer;
 
 
     private void Awake()
@@ -36,21 +36,32 @@ public class TimeSystem : MonoBehaviour
         if (startCounting )
         {
             minutes += Time.deltaTime;
-            if (minutes > 59)
+            if (minutes > maxTimer)
             {
                 minutes = 0;
                 EventManager.TriggerEvent(EventNames._RerollItemsFromTables);
-                hours++;
-                if (hours > 24)
-                    hours = 0;
-
             }
         }
     }
 
     public string GetCurrentFullTime()
     {
-        return hours.ToString("F0") + ":" + minutes.ToString("F0");
+        return minutes.ToString("F0");
+    }
+    
+    public string GetCurrentFullTimeInversed()
+    {
+        return (maxTimer - minutes).ToString("F0");
+    } 
+    
+    public float GetCurrentMinutesTime()
+    {
+        return minutes;
+    }
+
+    public float GetterMaxTimer()
+    {
+        return maxTimer;
     }
         
     public void KeepCountingTime(params object[] parameters)

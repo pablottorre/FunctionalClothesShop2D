@@ -118,7 +118,7 @@ public class StoreSellerManager : MonoBehaviour
 
     IEnumerator HideDialogue()
     {
-        yield return new WaitForSecondsRealtime(6);
+        yield return new WaitForSecondsRealtime(5);
         dialogueText.text = "";
     }
 }

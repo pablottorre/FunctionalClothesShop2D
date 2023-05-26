@@ -128,6 +128,11 @@ public class ControllerPlayer : MonoBehaviour
             collision.gameObject.GetComponent<CounterManager>().EnableEAnimation();
             isOnBuyingZone = true;
         }
+
+        if (collision.gameObject.layer == 10)
+        {
+            EventManager.TriggerEvent(EventNames._TriggerDarkWizardDialogue);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)

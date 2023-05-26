@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a980c71c6995f124c9f216f16cc576eb, type: 3}
   m_Name: SellSomethingFromCounter 3
   m_EditorClassIdentifier: 
-  dialogueText: 
+  dialogueText: you should try to buy more and sell less
