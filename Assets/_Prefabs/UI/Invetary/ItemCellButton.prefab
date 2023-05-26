@@ -205,6 +205,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 5107412224829828529}
+  isExclusive: 0
+  typeToUse: 0
 --- !u!114 &8906168676403633239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,4 +250,16 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8164392304052241313}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 890734963419714053}
+        m_TargetAssemblyTypeName: ItemCellSetter, Assembly-CSharp
+        m_MethodName: PressTheButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

@@ -60,6 +60,7 @@ public class StoreSellerManager : MonoBehaviour
         for (int i = 0; i < InventoryManager.instance.GetterOwnedClothes().Count; i++)
         {
             itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterCell(InventoryManager.instance.GetterOwnedClothes()[i]);
+            itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterForSale(true);
             itemsFromPoolOwn[i].SetActive(true);
         }
 

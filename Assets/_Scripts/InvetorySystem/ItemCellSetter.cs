@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class ItemCellSetter : MonoBehaviour
 {
+    ClothesSO _so;
+
     [SerializeField] private Image sprite;
     private bool isInUse = false;
+    private bool isForSale = false;
     [SerializeField] private bool isExclusive = false;
     [SerializeField] private ClothesType typeToUse;
 
@@ -14,10 +17,31 @@ public class ItemCellSetter : MonoBehaviour
     {
         sprite.sprite = _value.clothesSprite;
         isInUse = true;
+        _so = _value;
+    }
+
+    public void SetterForSale(bool value)
+    {
+        isForSale = value;
     }
 
     public bool GettterInUse()
     {
         return isInUse;
+    }
+
+    public void PressTheButton()
+    {
+        if (isForSale)
+        {
+            EventManager.TriggerEvent(EventNames._Sellsomething, _so);
+            sprite.sprite = null;
+            EconomySystem.instance.AddCoins(Mathf.RoundToInt(_so.clothesCost * 0.9f));
+            EventManager.TriggerEvent(EventNames._UpdateCoins);
+        }
+        else
+        {
+
+        }
     }
 }

@@ -13,6 +13,7 @@ public static class EventNames
     public const string _ShowItemsInStore = "ShowItemsInStore";
     public const string _BuySomethingFromSeller = "BuySomething";
     public const string _BuySomethingFromTable = "BuySomething";
+    public const string _Sellsomething = "SellSomething";
     public const string _StartMeditating = "StartMeditating";
     public const string _StopMeditating = "StopMeditating";
     public const string _UpdateCoins = "UpdateCoins";

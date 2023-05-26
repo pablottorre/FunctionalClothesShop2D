@@ -26,6 +26,7 @@ public class InventoryManager : MonoBehaviour
     {
         EventManager.SubscribeToEvent(EventNames._BuySomethingFromSeller, AddItemToInventory);
         EventManager.SubscribeToEvent(EventNames._BuySomethingFromTable, AddItemToInventory);
+        EventManager.SubscribeToEvent(EventNames._Sellsomething, RemoveItemToInventory);
     }
 
     public List<ClothesSO> GetterOwnedClothes()
@@ -42,5 +43,10 @@ public class InventoryManager : MonoBehaviour
     {
 
         clothesOwned.Add((ClothesSO)parameters[0]);
+    }
+
+    public void RemoveItemToInventory(params object[] parameters)
+    {
+        clothesOwned.Remove((ClothesSO)parameters[0]);
     }
 }
