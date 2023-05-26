@@ -100,11 +100,13 @@ public class ControllerPlayer : MonoBehaviour
 
         if (collision.gameObject.layer == 7)
         {
+            collision.gameObject.GetComponent<MeditationRug>().EnableEAnimation();
             canMeditate = true;
         }
 
         if (collision.gameObject.layer == 8)
         {
+            collision.gameObject.GetComponent<CounterManager>().EnableEAnimation();
             isOnBuyingZone = true;
         }
     }
@@ -119,11 +121,13 @@ public class ControllerPlayer : MonoBehaviour
 
         if (collision.gameObject.layer == 7)
         {
+            collision.gameObject.GetComponent<MeditationRug>().EnableEAnimation();
             canMeditate = false;
         }
 
         if (collision.gameObject.layer == 8)
         {
+            collision.gameObject.GetComponent<CounterManager>().EnableEAnimation();
             isOnBuyingZone = false;
         }
     }
