@@ -25,10 +25,10 @@ public class TimeSystem : MonoBehaviour
 
     private void Start()
     {
+        UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
         EventManager.SubscribeToEvent(EventNames._GameResumed, KeepCountingTime);
         EventManager.SubscribeToEvent(EventNames._GameStart, KeepCountingTime);
         EventManager.SubscribeToEvent(EventNames._GamePaused, StopCountingTime);
-        UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
     }
 
     private void OnUpdateDelegate()
@@ -38,10 +38,12 @@ public class TimeSystem : MonoBehaviour
             minutes += Time.deltaTime;
             if (minutes > 59)
             {
+                minutes = 0;
+                EventManager.TriggerEvent(EventNames._RerollItemsFromTables);
                 hours++;
                 if (hours > 24)
                     hours = 0;
-                minutes = 0;
+
             }
         }
     }
@@ -51,7 +53,7 @@ public class TimeSystem : MonoBehaviour
         return hours.ToString("F0") + ":" + minutes.ToString("F0");
     }
         
-    private void KeepCountingTime(params object[] parameters)
+    public void KeepCountingTime(params object[] parameters)
     {
         startCounting = true;
     }

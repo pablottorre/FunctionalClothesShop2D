@@ -25,4 +25,5 @@ public static class EventNames
     public const string _SelectItemFromInvetory = "SelectItemFromInventory";
     public const string _EquipItemToInventory = "EquipItemInventory";
     public const string _UnequipItemFromInvetory = "UnequipFromItemInventory";
+    public const string _RerollItemsFromTables = "RerollItemFromTables";
 }

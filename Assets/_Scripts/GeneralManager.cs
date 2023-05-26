@@ -12,7 +12,8 @@ public class GeneralManager : MonoBehaviour
 
     IEnumerator LateStart()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.15f);
         EventManager.TriggerEvent(EventNames._GameStart);
+        TimeSystem.instance.KeepCountingTime();
     }
 }
