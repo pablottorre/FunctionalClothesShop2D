@@ -697,6 +697,13 @@ MonoBehaviour:
   - {fileID: 4094336799503665596}
   - {fileID: 4094336798342064976}
   - {fileID: 4094336798372394716}
+  ogClothes:
+  - {fileID: 11400000, guid: eb41f1eedda4e924084a9add946b4430, type: 2}
+  - {fileID: 11400000, guid: 399e3971c3dc905489d433a27372f9bf, type: 2}
+  - {fileID: 11400000, guid: 5cb14caeb3f70fc4d8fc8174f2d166bb, type: 2}
+  - {fileID: 11400000, guid: e02822607df189143b1c9b1878c3cdb7, type: 2}
+  - {fileID: 11400000, guid: edfa0500d7ef3674ca9444f198c3cfe1, type: 2}
+  - {fileID: 11400000, guid: 004cc9b726d9f7f46a20bbb3aa0a3bbe, type: 2}
 --- !u!4 &4192034039247290000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010141028922, guid: 722924ec8a0056f4a8fb443b2fb65ff9, type: 3}

@@ -759,7 +759,7 @@ MonoBehaviour:
   darkWizardPortrait: {fileID: 2181380486745896380}
   dialogueText: {fileID: 5075042100597069451}
   imageFade: {fileID: 1044256778861854079}
-  speedFade: 1.25
+  speedFade: 0.5
 --- !u!1 &7997019161425805207
 GameObject:
   m_ObjectHideFlags: 0

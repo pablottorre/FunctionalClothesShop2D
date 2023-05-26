@@ -107,7 +107,7 @@ public class ItemCellSetter : MonoBehaviour
             else if (returnToInventory)
             {
                 SetterCell(_selectedSO);
-                EventManager.TriggerEvent(EventNames._UnequipItemFromInvetory);
+                EventManager.TriggerEvent(EventNames._UnequipItemFromInvetory,_selectedSO);
             }
             else if(isInUse)
             {
