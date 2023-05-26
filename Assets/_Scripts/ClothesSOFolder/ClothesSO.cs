@@ -25,5 +25,5 @@ public enum ClothesType
     Jacket,
     Tshirt,
     Trousers,
-    Boots
+    Shoes
 }

@@ -945,6 +945,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1724913967364240610}
     m_Modifications:
+    - target: {fileID: 890734963419714053, guid: 8db0d75009a071a4c80bcfaa3c5b8057, type: 3}
+      propertyPath: typeToUse
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6523596520554549645, guid: 8db0d75009a071a4c80bcfaa3c5b8057, type: 3}
       propertyPath: m_Name
       value: ItemCellButton (1)
@@ -1052,6 +1056,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1724913967364240610}
     m_Modifications:
+    - target: {fileID: 890734963419714053, guid: 8db0d75009a071a4c80bcfaa3c5b8057, type: 3}
+      propertyPath: typeToUse
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6523596520554549645, guid: 8db0d75009a071a4c80bcfaa3c5b8057, type: 3}
       propertyPath: m_Name
       value: ItemCellButton (3)
@@ -1159,6 +1167,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1724913967364240610}
     m_Modifications:
+    - target: {fileID: 890734963419714053, guid: 8db0d75009a071a4c80bcfaa3c5b8057, type: 3}
+      propertyPath: typeToUse
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6523596520554549645, guid: 8db0d75009a071a4c80bcfaa3c5b8057, type: 3}
       propertyPath: m_Name
       value: ItemCellButton (2)
@@ -1266,6 +1278,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1724913967364240610}
     m_Modifications:
+    - target: {fileID: 890734963419714053, guid: 8db0d75009a071a4c80bcfaa3c5b8057, type: 3}
+      propertyPath: typeToUse
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6523596520554549645, guid: 8db0d75009a071a4c80bcfaa3c5b8057, type: 3}
       propertyPath: m_Name
       value: ItemCellButton (4)

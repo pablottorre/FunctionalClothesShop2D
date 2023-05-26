@@ -61,22 +61,30 @@ public class StoreSellerManager : MonoBehaviour
             itemsFromPoolSeller[i].SetActive(true);
         }
 
-        for (int i = 0; i < InventoryManager.instance.GetterOwnedClothes().Count; i++)
-        {
-            itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterCell(InventoryManager.instance.GetterOwnedClothes()[i]);
-            itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterForSale(true);
-            itemsFromPoolOwn[i].SetActive(true);
-        }
-
         for (int i = 0; i < itemsFromPoolOwn.Count; i++)
         {
             itemsFromPoolOwn[i].SetActive(true);
         }
+
+        for (int i = 0; i < InventoryManager.instance.GetterOwnedClothes().Count; i++)
+        {
+            itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterCell(InventoryManager.instance.GetterOwnedClothes()[i]);
+            itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterForSale(true);
+        }
+
     }
 
     public void RemoveItemFromList(params object[] parameters)
     {
+
         listOfClothes.Remove((ClothesSO)parameters[0]);
+        for (int i = 0; i < InventoryManager.instance.GetterOwnedClothes().Count; i++)
+        {
+            Debug.Log(222);
+            itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterCell(InventoryManager.instance.GetterOwnedClothes()[i]);
+            itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterForSale(true);
+            itemsFromPoolOwn[i].SetActive(true);
+        }
     }
 
     public void SellItems(params object[] parameters)

@@ -41,8 +41,8 @@ public class InventoryManager : MonoBehaviour
 
     public void AddItemToInventory(params object[] parameters)
     {
-
         clothesOwned.Add((ClothesSO)parameters[0]);
+        Debug.Log(1111);
     }
 
     public void RemoveItemToInventory(params object[] parameters)

@@ -7,6 +7,7 @@ public class ItemCellSetter : MonoBehaviour
 {
     ClothesSO _so;
 
+    [SerializeField] private Image backgroundSprite;
     [SerializeField] private Image sprite;
     private bool isInUse = false;
     private bool isForSale = false;
@@ -30,6 +31,24 @@ public class ItemCellSetter : MonoBehaviour
         return isInUse;
     }
 
+    public ClothesType GetterType()
+    {
+        return typeToUse;
+    }
+
+    public void SetterAvailable(bool value)
+    {
+        backgroundSprite.enabled = true;
+        if (value)
+        {
+            backgroundSprite.color = Color.green;
+        }
+        else
+        {
+            backgroundSprite.color = Color.red;
+        }
+    }
+
     public void PressTheButton()
     {
         if (isForSale)
@@ -41,7 +60,7 @@ public class ItemCellSetter : MonoBehaviour
         }
         else
         {
-
+            EventManager.TriggerEvent(EventNames._SelectItemOnInvetory, _so);
         }
     }
 }

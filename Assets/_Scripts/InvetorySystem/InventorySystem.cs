@@ -13,11 +13,14 @@ public class InventorySystem : MonoBehaviour
     [Header("Canvas Group")]
     [SerializeField] CanvasGroup cg;
 
+    private ClothesSO selectedSO;
+
     public void Start()
     {
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, StartingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, EndingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUISeller, EndingSequence);
+        EventManager.SubscribeToEvent(EventNames._SelectItemOnInvetory, SelectItemOnInventory);
     }
 
     public virtual void StartingSequence(params object[] parameters)
@@ -58,6 +61,22 @@ public class InventorySystem : MonoBehaviour
         for (int i = 0; i < clothesEquiped.Count; i++)
         {
             gridEquipment[i].GetComponent<ItemCellSetter>().SetterCell(clothesEquiped[i]);
+        }
+    }
+
+    private void SelectItemOnInventory(params object[] parameters)
+    {
+        selectedSO = (ClothesSO)parameters[0];
+        for (int i = 0; i < gridEquipment.Count; i++)
+        {
+            if (gridEquipment[i].GetComponent<ItemCellSetter>().GettterInUse() || gridEquipment[i].GetComponent<ItemCellSetter>().GetterType() != selectedSO.typeOfClothes)
+            {
+                gridEquipment[i].GetComponent<ItemCellSetter>().SetterAvailable(false);
+            }
+            else
+            {
+                gridEquipment[i].GetComponent<ItemCellSetter>().SetterAvailable(true);
+            }
         }
     }
 }

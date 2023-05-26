@@ -260,6 +260,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e02822607df189143b1c9b1878c3cdb7, type: 2}
   - {fileID: 11400000, guid: 5cb14caeb3f70fc4d8fc8174f2d166bb, type: 2}
   - {fileID: 11400000, guid: 004cc9b726d9f7f46a20bbb3aa0a3bbe, type: 2}
+  - {fileID: 11400000, guid: edfa0500d7ef3674ca9444f198c3cfe1, type: 2}
   clothesEquiped: []
 --- !u!4 &243013154
 Transform:
@@ -1472,6 +1473,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1405492287}
     m_Modifications:
+    - target: {fileID: 32443417798216459, guid: 4df275e5539025941ba43a8ca6b78d65, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 163973054267770782, guid: 4df275e5539025941ba43a8ca6b78d65, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2000,6 +2005,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1405492287}
     m_Modifications:
+    - target: {fileID: 2686598161121636358, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.0314026
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686598161121636358, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0035133362
+      objectReference: {fileID: 0}
     - target: {fileID: 5940822601890646817, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
       propertyPath: m_Name
       value: SellerUI
@@ -2015,6 +2028,10 @@ PrefabInstance:
     - target: {fileID: 6876987199016249515, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7532603768096317441, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.0015144348
       objectReference: {fileID: 0}
     - target: {fileID: 7992389193669331672, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
       propertyPath: m_Pivot.x

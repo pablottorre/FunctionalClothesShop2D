@@ -15,3 +15,4 @@ MonoBehaviour:
   clothesSprite: {fileID: 21300000, guid: 1523363110d51784fa3085b9b74cdfc1, type: 3}
   clothesCost: 79
   clothesName: Jacket
+  typeOfClothes: 1
