@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -82,7 +83,7 @@ public class InventorySystem : MonoBehaviour
     private void UpdateInventoryAfterEquip(params object[] parameters)
     {
         clothesEquiped.Add((ClothesSO)parameters[0]);
-        gridEquipment[(int)clothesEquiped[clothesEquiped.Count - 1].typeOfClothes].GetComponent<ItemCellSetter>().SetterCell(clothesEquiped[clothesEquiped.Count - 1]);       
+        gridEquipment[(int)clothesEquiped[clothesEquiped.Count - 1].typeOfClothes].GetComponent<ItemCellSetter>().SetterCell(clothesEquiped[clothesEquiped.Count - 1]);
         currentCell.GetComponent<ItemCellSetter>().ResetCell();
         currentCell = null;
         clothesOwned.Remove((ClothesSO)parameters[0]);
@@ -93,13 +94,12 @@ public class InventorySystem : MonoBehaviour
         selectedSO = (ClothesSO)parameters[0];
         for (int i = 0; i < gridEquipment.Count; i++)
         {
-            if (gridEquipment[i].GetComponent<ItemCellSetter>().GettterInUse() || gridEquipment[i].GetComponent<ItemCellSetter>().GetterType() != selectedSO.typeOfClothes)
+            if (!gridEquipment[i].GetComponent<ItemCellSetter>().GettterInUse())
             {
-                gridEquipment[i].GetComponent<ItemCellSetter>().SetterAvailable(false);
-            }
-            else
-            {
-                gridEquipment[i].GetComponent<ItemCellSetter>().SetterAvailable(true);
+                if (gridEquipment[i].GetComponent<ItemCellSetter>().GetterType() != selectedSO.typeOfClothes)
+                    gridEquipment[i].GetComponent<ItemCellSetter>().SetterAvailable(false);
+                else
+                    gridEquipment[i].GetComponent<ItemCellSetter>().SetterAvailable(true);
             }
         }
         currentCell = (GameObject)parameters[1];

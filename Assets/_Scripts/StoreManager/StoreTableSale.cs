@@ -35,16 +35,8 @@ public class StoreTableSale : ItemToBuy
             BuyableSetter(false);
     }
 
-    public override void BuyableSetter(bool value)
-    {
-        base.BuyableSetter(value);
-    }
-
     public override void BuyItem()
     {
-        EventManager.UnsuscribeToEvent(EventNames._BuySomethingFromSeller, SetterBoolean);
-        EventManager.UnsuscribeToEvent(EventNames._BuySomethingFromTable, SetterBoolean);
-
         if (isBuyable)
         {
             buyZone.enabled = false;
@@ -54,6 +46,9 @@ public class StoreTableSale : ItemToBuy
             EconomySystem.instance.SpendCoins(realPrice);
             EventManager.TriggerEvent(eventName, _so);
             BuyableSetter(false);
-        }    }
+        }
+
+        GetComponent<StoreTableSale>().enabled = false;
+    }
 
 }
