@@ -11,6 +11,7 @@ public class ItemCellSetter : MonoBehaviour
     [SerializeField] private Image sprite;
     private bool isInUse = false;
     private bool isForSale = false;
+    private bool returnToInventory = false;
     [SerializeField] private bool isExclusive = false;
     [SerializeField] private ClothesType typeToUse;
     private bool hasItemSelected = false;
@@ -21,6 +22,7 @@ public class ItemCellSetter : MonoBehaviour
     {
         EventManager.SubscribeToEvent(EventNames._SelectItemOnInvetory, SelectAnItem);
         EventManager.SubscribeToEvent(EventNames._EquipItemToInventory, UnSelectItem);
+        EventManager.SubscribeToEvent(EventNames._SelectItemFromInvetory, ReturnItemToInventory);
     }
 
     private void SelectAnItem(params object[] parameters)
@@ -36,11 +38,16 @@ public class ItemCellSetter : MonoBehaviour
         backgroundSprite.enabled = false;
     }
 
+    private void ReturnItemToInventory(params object[] parameters)
+    {
+        returnToInventory = true;
+        _selectedSO = (ClothesSO)parameters[0];
+    }
+
     public void SetterCell(ClothesSO _value)
     {
         sprite.sprite = _value.clothesSprite;
         isInUse = true;
-        GetComponent<Button>().interactable = true;
         _so = _value;
     }
 
@@ -74,10 +81,17 @@ public class ItemCellSetter : MonoBehaviour
 
     public void PressTheButton()
     {
-        if (isExclusive && hasItemSelected && _selectedSO.typeOfClothes == typeToUse)
+        if (isExclusive)
         {
-            SetterCell(_selectedSO);
-            EventManager.TriggerEvent(EventNames._EquipItemToInventory, _selectedSO);
+            if (hasItemSelected && _selectedSO.typeOfClothes == typeToUse && !isInUse)
+            {
+                SetterCell(_selectedSO);
+                EventManager.TriggerEvent(EventNames._EquipItemToInventory, _selectedSO);
+            }
+            else
+            {
+                EventManager.TriggerEvent(EventNames._SelectItemFromInvetory, _so, this.gameObject);
+            }
         }
         else
         {
@@ -87,6 +101,11 @@ public class ItemCellSetter : MonoBehaviour
                 EventManager.TriggerEvent(EventNames._Sellsomething, _so);
                 sprite.sprite = null;
                 EventManager.TriggerEvent(EventNames._UpdateCoins);
+            }
+            else if (returnToInventory)
+            {
+                SetterCell(_selectedSO);
+                EventManager.TriggerEvent(EventNames._UnequipItemFromInvetory);
             }
             else
             {
@@ -98,12 +117,12 @@ public class ItemCellSetter : MonoBehaviour
     public void ResetCell()
     {
         backgroundSprite.enabled = false;
+        isInUse = false;
         sprite.sprite = null;
-        GetComponent<Button>().interactable = false;
     }
 
-    public void EnableButton()
+    public void DisableBackground()
     {
-        GetComponent<Button>().interactable = true;
+        backgroundSprite.enabled = false;
     }
 }
