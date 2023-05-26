@@ -41,6 +41,9 @@ public class ItemToBuy : MonoBehaviour
 
     public virtual void BuyItem()
     {
+        if (!InventoryManager.instance.canBuyWithSpace())
+            return;
+
         if (isBuyable)
         {
             EconomySystem.instance.SpendCoins(_so.clothesCost);

@@ -7,6 +7,7 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager instance;
 
     public List<ClothesSO> clothesOwned = new List<ClothesSO>();
+    private int maxItemsOnInvetory = 21;
     public List<ClothesSO> clothesEquiped = new List<ClothesSO>();
 
     private void Awake()
@@ -32,6 +33,11 @@ public class InventoryManager : MonoBehaviour
     public List<ClothesSO> GetterOwnedClothes()
     {
         return clothesOwned;
+    }
+
+    public bool canBuyWithSpace()
+    {
+        return clothesOwned.Count < maxItemsOnInvetory;
     }
     
     public List<ClothesSO> GetterEquipedClothes()

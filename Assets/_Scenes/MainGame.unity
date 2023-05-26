@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aecb675b855bede4c8cd75718a3e00ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCoins: 75
+  currentCoins: 5000
 --- !u!4 &777267581
 Transform:
   m_ObjectHideFlags: 0
