@@ -51,11 +51,13 @@ public class ControllerPlayer : MonoBehaviour
             else if (canMeditate)
             {
                 EventManager.TriggerEvent(EventNames._StartMeditating);
+                lastMediationZone.EnableEAnimation();
                 transform.position = lastMediationZone.GetterPositionToMeditate();
             }
             else if (isMeditating)
             {
                 EventManager.TriggerEvent(EventNames._StopMeditating);
+                lastMediationZone.EnableEAnimation();
             }
             else if (isOnBuyingZone)
             {
@@ -112,8 +114,8 @@ public class ControllerPlayer : MonoBehaviour
 
         if (collision.gameObject.layer == 7)
         {
-            collision.gameObject.GetComponent<MeditationRug>().EnableEAnimation();
             lastMediationZone = collision.gameObject.GetComponent<MeditationRug>();
+            lastMediationZone.EnableEAnimation();
             canMeditate = true;
         }
 
