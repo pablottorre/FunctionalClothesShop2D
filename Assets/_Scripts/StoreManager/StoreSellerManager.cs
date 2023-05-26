@@ -6,8 +6,10 @@ public class StoreSellerManager : MonoBehaviour
 {
 
     public List<ClothesSO> listOfClothes = new List<ClothesSO>();
-    public List<GameObject> itemsFromPool;
-    [SerializeField] private ObjectPool _op;
+    private List<GameObject> itemsFromPoolSeller;
+    private List<GameObject> itemsFromPoolOwn;
+    [SerializeField] private ObjectPool _opSellerItem;
+    [SerializeField] private ObjectPool _opOwnItem;
 
 
     [Header("Canvas Group")]
@@ -41,7 +43,8 @@ public class StoreSellerManager : MonoBehaviour
 
     public void GetItemsFromPool()
     {
-        itemsFromPool = _op.objectPoolCollection;
+        itemsFromPoolSeller = _opSellerItem.objectPoolCollection;
+        itemsFromPoolOwn = _opOwnItem.objectPoolCollection;
         SetChatToDisplay();
     }
 
@@ -50,8 +53,19 @@ public class StoreSellerManager : MonoBehaviour
     {
         for (int i = 0; i < listOfClothes.Count; i++)
         {
-            itemsFromPool[i].GetComponent<StoreChatSale>().SetItem(listOfClothes[i]);
-            itemsFromPool[i].SetActive(true);
+            itemsFromPoolSeller[i].GetComponent<StoreChatSale>().SetItem(listOfClothes[i]);
+            itemsFromPoolSeller[i].SetActive(true);
+        }
+
+        for (int i = 0; i < InventoryManager.instance.GetterOwnedClothes().Count; i++)
+        {
+            itemsFromPoolOwn[i].GetComponent<ItemCellSetter>().SetterCell(InventoryManager.instance.GetterOwnedClothes()[i]);
+            itemsFromPoolOwn[i].SetActive(true);
+        }
+
+        for (int i = 0; i < itemsFromPoolOwn.Count; i++)
+        {
+            itemsFromPoolOwn[i].SetActive(true);
         }
     }
 

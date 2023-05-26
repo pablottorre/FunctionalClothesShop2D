@@ -18,8 +18,6 @@ public class InventorySystem : MonoBehaviour
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, StartingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, EndingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUISeller, EndingSequence);
-        EventManager.SubscribeToEvent(EventNames._BuySomethingFromSeller, AddItemToInventory);
-        EventManager.SubscribeToEvent(EventNames._BuySomethingFromTable, AddItemToInventory);
     }
 
     public virtual void StartingSequence(params object[] parameters)
@@ -32,6 +30,9 @@ public class InventorySystem : MonoBehaviour
         {
             _op.objectPoolCollection[i].SetActive(true);
         }
+
+        clothesEquiped = InventoryManager.instance.GetterEquipedClothes();
+        clothesOwned = InventoryManager.instance.GetterOwnedClothes();
 
         SetClothesOnInventory();
     }
@@ -58,11 +59,5 @@ public class InventorySystem : MonoBehaviour
         {
             gridEquipment[i].GetComponent<ItemCellSetter>().SetterCell(clothesEquiped[i]);
         }
-    }
-
-    public void AddItemToInventory(params object[] parameters)
-    {
-
-        clothesOwned.Add((ClothesSO)parameters[0]);
     }
 }
