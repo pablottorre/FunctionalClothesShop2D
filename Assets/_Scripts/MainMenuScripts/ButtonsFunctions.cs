@@ -8,12 +8,6 @@ public class ButtonsFunctions : MonoBehaviour
     {
         EventManager.TriggerEvent(EventNames._GameStartButton);
     }
-
-    public void OptionsButtonFunction()
-    {
-        EventManager.TriggerEvent(EventNames._OptionsStart);
-    }
-
     public void ExitButtonFunction()
     {
         Application.Quit();
