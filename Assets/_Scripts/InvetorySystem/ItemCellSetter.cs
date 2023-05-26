@@ -23,6 +23,7 @@ public class ItemCellSetter : MonoBehaviour
         EventManager.SubscribeToEvent(EventNames._SelectItemOnInvetory, SelectAnItem);
         EventManager.SubscribeToEvent(EventNames._EquipItemToInventory, UnSelectItem);
         EventManager.SubscribeToEvent(EventNames._SelectItemFromInvetory, ReturnItemToInventory);
+        EventManager.SubscribeToEvent(EventNames._UnequipItemFromInvetory, UnSelectItem);
     }
 
     private void SelectAnItem(params object[] parameters)
@@ -36,6 +37,7 @@ public class ItemCellSetter : MonoBehaviour
         _selectedSO = null;
         hasItemSelected = false;
         backgroundSprite.enabled = false;
+        returnToInventory = false;
     }
 
     private void ReturnItemToInventory(params object[] parameters)
@@ -88,7 +90,7 @@ public class ItemCellSetter : MonoBehaviour
                 SetterCell(_selectedSO);
                 EventManager.TriggerEvent(EventNames._EquipItemToInventory, _selectedSO);
             }
-            else
+            else if(isInUse)
             {
                 EventManager.TriggerEvent(EventNames._SelectItemFromInvetory, _so, this.gameObject);
             }
@@ -107,7 +109,7 @@ public class ItemCellSetter : MonoBehaviour
                 SetterCell(_selectedSO);
                 EventManager.TriggerEvent(EventNames._UnequipItemFromInvetory);
             }
-            else
+            else if(isInUse)
             {
                 EventManager.TriggerEvent(EventNames._SelectItemOnInvetory, _so, this.gameObject);
             }

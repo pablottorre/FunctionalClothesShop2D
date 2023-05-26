@@ -17,8 +17,6 @@ public class InventorySystem : MonoBehaviour
     private ClothesSO selectedSO;
     private GameObject currentCell;
 
-    [SerializeField] GameObject dropUI;
-
     public void Start()
     {
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, StartingSequence);
@@ -96,10 +94,6 @@ public class InventorySystem : MonoBehaviour
     {
         clothesOwned.Add(selectedSO);
         currentCell.GetComponent<ItemCellSetter>().ResetCell();
-        for (int i = 0; i < _op.objectPoolCollection.Count; i++)
-        {
-            _op.objectPoolCollection[i].GetComponent<ItemCellSetter>().DisableBackground();
-        }
         clothesEquiped.Remove(selectedSO);
         selectedSO = null;
         currentCell = null;
