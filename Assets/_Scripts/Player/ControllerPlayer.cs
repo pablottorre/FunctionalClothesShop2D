@@ -16,6 +16,8 @@ public class ControllerPlayer : MonoBehaviour
     private bool isOnBuyingZone;
     private bool isOnBuyingMenu;
 
+    private MeditationRug lastMediationZone;
+
 
     void Start()
     {
@@ -45,6 +47,7 @@ public class ControllerPlayer : MonoBehaviour
             else if (canMeditate)
             {
                 EventManager.TriggerEvent(EventNames._StartMeditating);
+                transform.position = lastMediationZone.GetterPositionToMeditate();
             }
             else if (isMeditating)
             {
@@ -101,6 +104,7 @@ public class ControllerPlayer : MonoBehaviour
         if (collision.gameObject.layer == 7)
         {
             collision.gameObject.GetComponent<MeditationRug>().EnableEAnimation();
+            lastMediationZone = collision.gameObject.GetComponent<MeditationRug>();
             canMeditate = true;
         }
 
@@ -123,6 +127,7 @@ public class ControllerPlayer : MonoBehaviour
         {
             collision.gameObject.GetComponent<MeditationRug>().EnableEAnimation();
             canMeditate = false;
+            lastMediationZone = null;
         }
 
         if (collision.gameObject.layer == 8)
