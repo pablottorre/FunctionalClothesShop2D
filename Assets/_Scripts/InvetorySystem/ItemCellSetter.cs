@@ -34,9 +34,9 @@ public class ItemCellSetter : MonoBehaviour
     {
         if (isForSale)
         {
+            EconomySystem.instance.AddCoins(Mathf.RoundToInt(_so.clothesCost * 0.9f));
             EventManager.TriggerEvent(EventNames._Sellsomething, _so);
             sprite.sprite = null;
-            EconomySystem.instance.AddCoins(Mathf.RoundToInt(_so.clothesCost * 0.9f));
             EventManager.TriggerEvent(EventNames._UpdateCoins);
         }
         else

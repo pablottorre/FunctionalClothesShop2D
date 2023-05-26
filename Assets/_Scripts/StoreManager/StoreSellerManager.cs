@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class StoreSellerManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class StoreSellerManager : MonoBehaviour
     private List<GameObject> itemsFromPoolOwn;
     [SerializeField] private ObjectPool _opSellerItem;
     [SerializeField] private ObjectPool _opOwnItem;
+    [SerializeField] private TMP_Text goldText;
 
 
     [Header("Canvas Group")]
@@ -20,6 +22,7 @@ public class StoreSellerManager : MonoBehaviour
     {
         EventManager.SubscribeToEvent(EventNames._ShowItemsInStore, SetChatToDisplay);
         EventManager.SubscribeToEvent(EventNames._BuySomethingFromSeller, RemoveItemFromList);
+        EventManager.SubscribeToEvent(EventNames._Sellsomething, SellItems);
 
         EventManager.SubscribeToEvent(EventNames._LoadUISeller, StartingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, EndingSequence);
@@ -31,6 +34,7 @@ public class StoreSellerManager : MonoBehaviour
         cg.alpha = 1;
         cg.interactable = true;
         cg.blocksRaycasts = true;
+        goldText.text = EconomySystem.instance.GetCurrentCoins().ToString();
         GetItemsFromPool();
     }
 
@@ -73,5 +77,10 @@ public class StoreSellerManager : MonoBehaviour
     public void RemoveItemFromList(params object[] parameters)
     {
         listOfClothes.Remove((ClothesSO)parameters[0]);
+    }
+
+    public void SellItems(params object[] parameters)
+    {
+        goldText.text = EconomySystem.instance.GetCurrentCoins().ToString();
     }
 }

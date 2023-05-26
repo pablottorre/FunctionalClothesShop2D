@@ -1925,6 +1925,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlobalUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7715919833281263418, guid: 716020fa856f3af47b82cfa9ad4c7fa2, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 716020fa856f3af47b82cfa9ad4c7fa2, type: 3}
 --- !u!224 &2041517903909987669 stripped
@@ -2095,6 +2099,10 @@ PrefabInstance:
     - target: {fileID: 7992389193669331672, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8932420809109951077, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.7733765
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 633e5cc642bbf6d44be1a3261f801841, type: 3}
