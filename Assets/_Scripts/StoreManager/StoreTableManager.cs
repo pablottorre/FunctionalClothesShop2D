@@ -9,14 +9,8 @@ public class StoreTableManager : MonoBehaviour
 
     private void Start()
     {
-        EventManager.SubscribeToEvent(EventNames._BuySomethingFromTable, RemoveItemFromList);
         EventManager.SubscribeToEvent(EventNames._GameStart, SetTablesToDisplay);
         EventManager.SubscribeToEvent(EventNames._RerollItemsFromTables, SetTablesToDisplay);
-    }
-
-    private void RemoveItemFromList(params object[] parameters)
-    {
-        listOfClothes.Remove((ClothesSO)parameters[0]);
     }
 
     public void SetTablesToDisplay(params object[] parameters)
