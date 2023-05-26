@@ -57,6 +57,7 @@ public class InventorySystem : MonoBehaviour
         for (int i = 0; i < gridEquipment.Count; i++)
         {
             gridEquipment[i].GetComponent<ItemCellSetter>().ResetCell();
+            gridEquipment[i].SetActive(false);
         }
     }
     private void SetClothesOnInventory()
@@ -64,6 +65,12 @@ public class InventorySystem : MonoBehaviour
         for (int i = 0; i < clothesOwned.Count; i++)
         {
             _op.objectPoolCollection[i].GetComponent<ItemCellSetter>().SetterCell(clothesOwned[i]);
+        }
+
+        for (int i = 0; i < gridEquipment.Count; i++)
+        {
+            gridEquipment[i].GetComponent<ItemCellSetter>().EnableButton();
+            gridEquipment[i].SetActive(true);
         }
 
         for (int i = 0; i < clothesEquiped.Count; i++)

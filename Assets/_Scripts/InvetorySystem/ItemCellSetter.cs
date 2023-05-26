@@ -40,6 +40,7 @@ public class ItemCellSetter : MonoBehaviour
     {
         sprite.sprite = _value.clothesSprite;
         isInUse = true;
+        GetComponent<Button>().interactable = true;
         _so = _value;
     }
 
@@ -98,7 +99,11 @@ public class ItemCellSetter : MonoBehaviour
     {
         backgroundSprite.enabled = false;
         sprite.sprite = null;
-        sprite.enabled = false;
         GetComponent<Button>().interactable = false;
+    }
+
+    public void EnableButton()
+    {
+        GetComponent<Button>().interactable = true;
     }
 }
