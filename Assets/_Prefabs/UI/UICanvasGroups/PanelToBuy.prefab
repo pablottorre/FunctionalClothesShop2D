@@ -338,7 +338,7 @@ MonoBehaviour:
   listOfClothes: []
   itemsFromPool: []
   _op: {fileID: 2781341059476248655}
-  cg: {fileID: 0}
+  cg: {fileID: 9221119204372510442}
 --- !u!225 &9221119204372510442
 CanvasGroup:
   m_ObjectHideFlags: 0

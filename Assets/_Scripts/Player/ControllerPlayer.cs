@@ -28,6 +28,8 @@ public class ControllerPlayer : MonoBehaviour
                 itemToBuyFromTable.GetComponentInParent<StoreTableSale>().BuyItem();
             }
         }
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -14,6 +14,11 @@ public class UpdateManager : MonoBehaviour
 
     bool isOnPause = false;
 
+    public bool GetterPause()
+    {
+        return isOnPause;
+    }
+
     private void Awake()
     {
         if (UpdateManager.instance == null)
@@ -29,20 +34,21 @@ public class UpdateManager : MonoBehaviour
 
     private void Start()
     {
-        EventManager.SubscribeToEvent(EventNames._GamePaused, PauseGame);
-        EventManager.SubscribeToEvent(EventNames._GameResumed, ResumeGame);
+        EventManager.SubscribeToEvent(EventNames._LoadUIInventory, PauseGame);
+        EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, ResumeGame);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isOnPause)
-                EventManager.TriggerEvent("ResumeGame");
-            else
-                EventManager.TriggerEvent("PauseGame");
-        }
+        Debug.Log(789);
 
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.I))
+        {
+            if (GetterPause())
+                EventManager.TriggerEvent(EventNames._LoadUIGlobal);
+            else
+                EventManager.TriggerEvent(EventNames._LoadUIInventory);
+        }
 
         if (!isOnPause)
             OnUpdateDelegate();
@@ -50,6 +56,7 @@ public class UpdateManager : MonoBehaviour
 
     void FixedUpdate()
     {
+
         if (!isOnPause)
             OnFixedUpdateDelegate();
     }
@@ -62,6 +69,8 @@ public class UpdateManager : MonoBehaviour
         {
             anim.speed = 0;
         }
+
+        EventManager.TriggerEvent(EventNames._GamePaused);
     }
 
     void ResumeGame(params object[] parameters)
@@ -72,5 +81,7 @@ public class UpdateManager : MonoBehaviour
         {
             anim.speed = 1;
         }
+
+       EventManager.TriggerEvent(EventNames._GameResumed);
     }
 }

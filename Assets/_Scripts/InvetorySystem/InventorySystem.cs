@@ -13,21 +13,6 @@ public class InventorySystem : MonoBehaviour
     [Header("Canvas Group")]
     [SerializeField] CanvasGroup cg;
 
-    public static InventorySystem instance;
-
-    private void Awake()
-    {
-        if (InventorySystem.instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     public void Start()
     {
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, StartingSequence);
@@ -42,6 +27,11 @@ public class InventorySystem : MonoBehaviour
         cg.alpha = 1;
         cg.interactable = true;
         cg.blocksRaycasts = true;
+
+        for (int i = 0; i < _op.objectPoolCollection.Count; i++)
+        {
+            _op.objectPoolCollection[i].SetActive(true);
+        }
     }
 
     public virtual void EndingSequence(params object[] parameters)
@@ -49,6 +39,11 @@ public class InventorySystem : MonoBehaviour
         cg.alpha = 0;
         cg.interactable = false;
         cg.blocksRaycasts = false;
+
+        for (int i = 0; i < _op.objectPoolCollection.Count; i++)
+        {
+            _op.objectPoolCollection[i].SetActive(false);
+        }
     }
 
     [ContextMenu("SetCellsOnInventory")]
