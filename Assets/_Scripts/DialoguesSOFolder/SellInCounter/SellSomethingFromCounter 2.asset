@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a980c71c6995f124c9f216f16cc576eb, type: 3}
   m_Name: SellSomethingFromCounter 2
   m_EditorClassIdentifier: 
-  dialogueText: i have seen better items
+  dialogueText: I have seen better items
