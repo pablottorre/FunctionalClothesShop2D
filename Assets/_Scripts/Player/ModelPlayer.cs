@@ -12,6 +12,9 @@ public class ModelPlayer : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        EventManager.SubscribeToEvent(EventNames._StartMeditating, StartedMeditating);
+        EventManager.SubscribeToEvent(EventNames._StopMeditating, StopedMeditating);
+
     }
 
     public void Move(float horizontal, float vertical)
@@ -29,6 +32,17 @@ public class ModelPlayer : MonoBehaviour
         Vector2 moveDir = new Vector2(horizontal, vertical);
         moveDir = moveDir.normalized * _moveSpeed * Time.deltaTime;
         _rb.velocity = moveDir;        
+    }
+
+    private void StartedMeditating(params object[] parameters)
+    {
+        _anim.SetBool("isMeditating", true);
+    }
+    
+    private void StopedMeditating(params object[] parameters)
+    {
+
+        _anim.SetBool("isMeditating", false);
     }
 
 }
