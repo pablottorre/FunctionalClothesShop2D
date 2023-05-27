@@ -43,8 +43,19 @@ public class StoreChatSale : ItemToBuy
 
     public override void BuyItem()
     {
-        base.BuyItem();
-        SetOutOfStock(true);
+        if (!InventoryManager.instance.canBuyWithSpace())
+        {
+            EventManager.TriggerEvent(EventNames._Inventoryfull);
+            return;
+        }
+
+        if (isBuyable)
+        {
+            EconomySystem.instance.SpendCoins(_so.clothesCost);
+            EventManager.TriggerEvent(eventName, _so);
+            BuyableSetter(false);
+            SetOutOfStock(true);
+        }
     }
 
     public void SetOutOfStock(bool value)

@@ -87,6 +87,7 @@ public class ControllerPlayer : MonoBehaviour
     private void ResumeThePlayer(params object[] parameters)
     {
         canMove = true;
+        isOnBuyingMenu = false;
     }
 
     private void StartedMeditating(params object[] parameters)
