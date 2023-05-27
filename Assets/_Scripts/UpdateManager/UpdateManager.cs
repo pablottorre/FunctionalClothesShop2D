@@ -35,6 +35,7 @@ public class UpdateManager : MonoBehaviour
     private void Start()
     {
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, PauseGame);
+        EventManager.SubscribeToEvent(EventNames._LoadUISeller, PauseGame);
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, ResumeGame);
     }
 

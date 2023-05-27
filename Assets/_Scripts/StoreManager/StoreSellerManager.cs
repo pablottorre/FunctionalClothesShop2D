@@ -52,6 +52,10 @@ public class StoreSellerManager : MonoBehaviour
         cg.blocksRaycasts = false;
     }
 
+    public void CloseMenu()
+    {
+        EventManager.TriggerEvent(EventNames._LoadUIGlobal);
+    }
     public void GetItemsFromPool()
     {
         itemsFromPoolSeller = _opSellerItem.objectPoolCollection;
