@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InventorySystem : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class InventorySystem : MonoBehaviour
 
     [Header("Canvas Group")]
     [SerializeField] CanvasGroup cg;
+
+    [Header("Coins")]
+    [SerializeField] private TMP_Text coinsText;
 
     private ClothesSO selectedSO;
     private GameObject currentCell;
@@ -42,7 +46,14 @@ public class InventorySystem : MonoBehaviour
         clothesEquiped = InventoryManager.instance.GetterEquipedClothes();
         clothesOwned = InventoryManager.instance.GetterOwnedClothes();
 
+        UpdateCoins();
+
         SetClothesOnInventory();
+    }
+
+    private void UpdateCoins()
+    {
+        coinsText.text = EconomySystem.instance.GetCurrentCoins().ToString();
     }
 
     public virtual void EndingSequence(params object[] parameters)

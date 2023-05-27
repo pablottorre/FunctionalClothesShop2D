@@ -11,6 +11,7 @@ public class StoreChatSale : ItemToBuy
     [SerializeField] Image clothesSpriteToDisplay;
     [SerializeField] TMP_Text clothesNameToDisplay;
     [SerializeField] TMP_Text clothesPriceToDisplay;
+    [SerializeField] GameObject outOfStockGameObject;
 
     public override void Start()
     {
@@ -26,6 +27,7 @@ public class StoreChatSale : ItemToBuy
         clothesNameToDisplay.text = _cloth.clothesName;
         clothesPriceToDisplay.text = _cloth.clothesCost.ToString();
         _so = _cloth;
+        SetOutOfStock(false);
 
         SetterBoolean();
     }
@@ -37,5 +39,16 @@ public class StoreChatSale : ItemToBuy
 
         base.BuyableSetter(value);
         GetComponent<Button>().interactable = value;
+    }
+
+    public override void BuyItem()
+    {
+        base.BuyItem();
+        SetOutOfStock(true);
+    }
+
+    public void SetOutOfStock(bool value)
+    {
+        outOfStockGameObject.SetActive(value);
     }
 }
