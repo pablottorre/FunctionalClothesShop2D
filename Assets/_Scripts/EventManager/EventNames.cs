@@ -6,6 +6,7 @@ public static class EventNames
 {
     public const string _GameStartButton = "GameStartButton";
     public const string _GameStart = "GameStart";
+    public const string _EndedFadeIn = "EndedFadeIn";
     public const string _GamePaused = "GamePaused";
     public const string _GameResumed = "GameResumed";
     public const string _OptionsStart = "OptionsStart";

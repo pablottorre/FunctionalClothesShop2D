@@ -26,12 +26,12 @@ public class ControllerPlayer : MonoBehaviour
     {
         UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
         UpdateManager.instance.OnFixedUpdateDelegate += OnFixedUpdateDelegate;
-        EventManager.SubscribeToEvent(EventNames._GameStart, ResumeThePlayer);
         EventManager.SubscribeToEvent(EventNames._StartMeditating, StartedMeditating);
         EventManager.SubscribeToEvent(EventNames._StopMeditating, StopMeditating);
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, PauseThePlayer);
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, ResumeThePlayer);
         EventManager.SubscribeToEvent(EventNames._TriggerCoinAnimation, StartCoinAnimation);
+        EventManager.SubscribeToEvent(EventNames._EndedFadeIn, ResumeThePlayer);
     }
 
 
@@ -125,7 +125,6 @@ public class ControllerPlayer : MonoBehaviour
 
         if (collision.gameObject.layer == 8)
         {
-            collision.gameObject.GetComponent<CounterManager>().EnableEAnimation();
             isOnBuyingZone = true;
         }
 
@@ -152,7 +151,6 @@ public class ControllerPlayer : MonoBehaviour
 
         if (collision.gameObject.layer == 8)
         {
-            collision.gameObject.GetComponent<CounterManager>().EnableEAnimation();
             isOnBuyingZone = false;
         }
     }

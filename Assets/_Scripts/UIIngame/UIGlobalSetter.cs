@@ -25,6 +25,7 @@ public class UIGlobalSetter : MonoBehaviour
     [SerializeField] private Image imageFade;
     [SerializeField] private float speedFade;
     private float currentFade = 1;
+    bool hasTriggerStartEvent = false;
 
     public void Start()
     {
@@ -33,7 +34,7 @@ public class UIGlobalSetter : MonoBehaviour
         EventManager.SubscribeToEvent(EventNames._LoadUIGlobal, StartingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUIInventory, EndingSequence);
         EventManager.SubscribeToEvent(EventNames._LoadUISeller, EndingSequence);
-        EventManager.SubscribeToEvent(EventNames._BuySomethingFromTable,BuySomethingFromTables);
+        EventManager.SubscribeToEvent(EventNames._BuySomethingFromTable, BuySomethingFromTables);
         EventManager.SubscribeToEvent(EventNames._TriggerDarkWizardDialogue, HearFromTheDarkWizard);
         timerMax = TimeSystem.instance.GetterMaxTimer();
         UpdateManager.instance.OnUpdateDelegate += OnUpdateDelegate;
@@ -69,7 +70,7 @@ public class UIGlobalSetter : MonoBehaviour
         dialogueText.text = buyingFromTableDialogues[Random.Range(0, buyingFromTableDialogues.Count)].dialogueText;
         StartCoroutine(HideDialogue());
     }
-    
+
     private void HearFromTheDarkWizard(params object[] parameters)
     {
         StopCoroutine(HideDialogue());
@@ -93,10 +94,19 @@ public class UIGlobalSetter : MonoBehaviour
     {
         clockFill.fillAmount = TimeSystem.instance.GetCurrentMinutesTime() / timerMax;
 
-        if (currentFade > 0)
+
+        if (!hasTriggerStartEvent)
         {
-            currentFade -= Time.deltaTime * speedFade; 
-            imageFade.fillAmount = currentFade;
+            if (currentFade > 0)
+            {
+                currentFade -= Time.deltaTime * speedFade;
+                imageFade.fillAmount = currentFade;
+            }
+            else
+            {
+                EventManager.TriggerEvent(EventNames._EndedFadeIn);
+                hasTriggerStartEvent = true;
+            }
         }
     }
 
